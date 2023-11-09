@@ -161,7 +161,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js
       $(document).ready(function () {
         let currentPath = document.location.pathname;
 
-        blockListPath = ["/generate/permit", "/login"];
+        blockListPath = ["/generate/permit", "/login", "/backside/permit"];
         $.each(blockListPath, function (index, value) {
           if (currentPath == value) {
             var element = document.getElementById("side-nav");

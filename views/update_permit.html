@@ -1,17 +1,13 @@
 {{ define "content" }}
-<div id="create-permit" class="justify-content-center data-body">
+<div class="justify-content-center data-body">
   <div class="m-3">
     <h1 class="text-center">Create Permit</h1>
-    <form
-      id="create-permit"
-      action="/create/permit"
-      method="POST"
-      enctype="multipart/form-data"
-    >
+    <form id="create-permit" method="post" enctype="multipart/form-data">
       <div class="form-group">
         <div class="form-group">
           <label for="inputName">Nama*</label>
           <input
+            id="name-permit"
             type="text"
             class="form-control"
             name="name"
@@ -21,6 +17,7 @@
         </div>
         <label for="inputRegion">Region*</label>
         <input
+          id="reg-permit"
           type="text"
           class="form-control"
           name="region"
@@ -31,6 +28,7 @@
       <div class="form-group">
         <label for="inputNik">NIK*</label>
         <input
+          id="nik-permit"
           type="text"
           class="form-control"
           name="nik"
@@ -41,6 +39,7 @@
       <div class="form-group">
         <label for="inputCompany">Perusahaan*</label>
         <input
+          id="company-permit"
           type="text"
           class="form-control"
           name="company"
@@ -51,6 +50,7 @@
       <div class="form-group">
         <label for="inputDepartement">Departemen*</label>
         <input
+          id="departement-permit"
           type="text"
           class="form-control"
           name="departement"
@@ -61,6 +61,7 @@
       <div class="form-group">
         <label for="inputPosition">Jabatan*</label>
         <input
+          id="position-permit"
           type="text"
           class="form-control"
           name="position"
@@ -79,14 +80,13 @@
         />
       </div>
       <div class="form-group">
-        <label for="imagePermit">Photo Profile*</label>
+        <label for="imagePermit">Photo Profile</label>
         <input
           type="file"
           class="form-control-file"
           id="imagePermit"
           name="file"
           onchange="preview()"
-          required
         />
         <img id="frame" src="" class="m-2 image-preview" />
       </div>
@@ -105,10 +105,29 @@
   crossorigin="anonymous"
 ></script>
 <script>
+  $(document).ready(function () {
+    var id = new URLSearchParams(window.location.search).get("id");
+
+    $.ajax({
+      url: "/detail/permit?id=" + id,
+      method: "get",
+      success: function (data) {
+        document.getElementById("name-permit").value = data.name;
+        document.getElementById("nik-permit").value = data.nik;
+        document.getElementById("reg-permit").value = data.region;
+        document.getElementById("company-permit").value = data.company;
+        document.getElementById("departement-permit").value = data.departement;
+        document.getElementById("position-permit").value = data.position;
+        $("#frame").attr("src", "/" + data.image);
+      },
+    });
+  });
+
   const today = new Date().toISOString().split("T")[0];
   document.getElementById("datepicker").value = today;
 
   $(document).ready(function () {
+    var id = new URLSearchParams(window.location.search).get("id");
     $("#create-permit").on("click", ".create-permit-btn", function () {
       $('button[type="submit"]').click(function (event) {
         $("[required]").each(function (i, el) {
@@ -124,7 +143,7 @@
             event.preventDefault();
             return false;
           } else {
-            $("#create-permit").attr("action", "/create/permit");
+            $("#create-permit").attr("action", `/update/permit?id=${id}`);
 
             Swal.fire({
               title: "Success",

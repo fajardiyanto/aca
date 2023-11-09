@@ -14,7 +14,7 @@ import (
 )
 
 type PermitService struct {
-	db *gorm.DB
+	db   *gorm.DB
 	auth AuthService
 }
 
@@ -34,7 +34,6 @@ func (s *PermitService) CreatePermitHTML(c *gin.Context) {
 	})
 }
 
-
 func (s *PermitService) ListPermitHTML(c *gin.Context) {
 	c.HTML(http.StatusOK, "list_permit", gin.H{
 		"title": "List Permit",
@@ -44,6 +43,18 @@ func (s *PermitService) ListPermitHTML(c *gin.Context) {
 func (s *PermitService) PagePermit(c *gin.Context) {
 	c.HTML(http.StatusOK, "generate_permit", gin.H{
 		"title": "Permit",
+	})
+}
+
+func (s *PermitService) UpdatePermitHTML(c *gin.Context) {
+	c.HTML(http.StatusOK, "update_permit", gin.H{
+		"title": "Update Permit",
+	})
+}
+
+func (s *PermitService) BacksideHTML(c *gin.Context) {
+	c.HTML(http.StatusOK, "backside", gin.H{
+		"title": "Update Permit",
 	})
 }
 
@@ -63,19 +74,19 @@ func (s *PermitService) CreatePermit(c *gin.Context) {
 	}
 
 	data := models.Permit{
-		PermitID: uuid.NewString(),
-		Name: c.PostForm("name"),
-		Region: c.PostForm("region"),
-		NIK: c.PostForm("nik"),
-		Company: c.PostForm("company"),
+		PermitID:    uuid.NewString(),
+		Name:        c.PostForm("name"),
+		Region:      c.PostForm("region"),
+		NIK:         c.PostForm("nik"),
+		Company:     c.PostForm("company"),
 		Departement: c.PostForm("departement"),
-		Position: c.PostForm("position"),
-		Image: pathFile,
-		Valid: c.PostForm("valid"),
-		CreatedAt: time.Now(),
+		Position:    c.PostForm("position"),
+		Image:       pathFile,
+		Valid:       c.PostForm("valid"),
+		CreatedAt:   time.Now(),
 	}
 
-	if err := s.db.Save(&data).Error; err != nil {
+	if err = s.db.Save(&data).Error; err != nil {
 		c.Redirect(http.StatusFound, fmt.Sprintf("/create/permit?error=%s", err.Error()))
 		return
 	}
@@ -101,6 +112,47 @@ func (s *PermitService) GetDetailPermit(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, data)
+}
+
+func (s *PermitService) UpdatePermit(c *gin.Context) {
+	var data models.Permit
+	if err := s.db.Where("id = ?", c.Query("id")).First(&data).Error; err != nil {
+		c.Redirect(http.StatusFound, fmt.Sprintf("/list/permit?error=%s", err.Error()))
+		return
+	}
+
+	imageFilePath := data.Image
+	file, err := c.FormFile("file")
+	if err == nil {
+		fileExtension := filepath.Ext(file.Filename)
+		pathFile := fmt.Sprintf("images/%s%s", data.PermitID, fileExtension)
+		if err = c.SaveUploadedFile(file, pathFile); err != nil {
+			fmt.Println("222")
+			c.Redirect(http.StatusFound, fmt.Sprintf("/update/permit?error=%s", err.Error()))
+			return
+		}
+
+		imageFilePath = pathFile
+	}
+
+	permit := models.Permit{
+		Name:        c.PostForm("name"),
+		Region:      c.PostForm("region"),
+		NIK:         c.PostForm("nik"),
+		Company:     c.PostForm("company"),
+		Departement: c.PostForm("departement"),
+		Position:    c.PostForm("position"),
+		Image:       imageFilePath,
+		Valid:       c.PostForm("valid"),
+		CreatedAt:   time.Now(),
+	}
+
+	if err = s.db.Where("id = ?", data.ID).Updates(&permit).Error; err != nil {
+		c.Redirect(http.StatusFound, fmt.Sprintf("/update/permit?error=%s", err.Error()))
+		return
+	}
+
+	c.Redirect(http.StatusFound, "/list/permit")
 }
 
 func (s *PermitService) DeletePermit(c *gin.Context) {

@@ -31,3 +31,5 @@ external/files
 run.sh
 sqlservertest
 *.app
+
+images/*

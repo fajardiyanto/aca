@@ -61,6 +61,9 @@ func main() {
 	r.POST("/create/permit", svcPermit.CreatePermit)
 	r.GET("/detail/permit", svcPermit.GetDetailPermit)
 	r.GET("/delete/permit", svcPermit.DeletePermit)
+	r.GET("/update/permit", svcPermit.UpdatePermitHTML)
+	r.POST("/update/permit", svcPermit.UpdatePermit)
+	r.GET("/backside/permit", svcPermit.BacksideHTML)
 
 	r.GET("/generate/permit", svcPermit.PagePermit)
 

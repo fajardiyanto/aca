@@ -1,6 +1,8 @@
 .box {
   width: 299px;
-  height: 505px;
+  height: 521px;
+  outline-style: solid;
+  border-radius: 17px 17px 17px 17px;
 }
 
 .box .group {
@@ -13,7 +15,7 @@
 .box .overlap-group {
   position: relative;
   width: 299px;
-  height: 505px;
+  height: 405px;
   background-color: #ffffff;
   border-radius: 17px;
 }
@@ -30,7 +32,7 @@
   position: absolute;
   width: 299px;
   height: 97px;
-  top: 79px;
+  top: 95px;
   left: 0;
   background-color: #ff0000;
   border-radius: 0px 0px 17px 17px;
@@ -40,7 +42,7 @@
   position: absolute;
   width: 265px;
   height: 111px;
-  top: 0;
+  top: 20px;
   left: 0;
   background-color: #ffffff;
   border-radius: 0px 0px 17px 0px;
@@ -61,7 +63,7 @@
 .box .text-wrapper-2 {
   position: absolute;
   height: 12px;
-  top: 136px;
+  top: 153px;
   left: 195px;
   font-family: "Inter-SemiBold", Helvetica;
   font-weight: 600;
@@ -76,7 +78,7 @@
   position: absolute;
   width: 19px;
   height: 19px;
-  top: 132px;
+  top: 153px;
   left: 24px;
   background-color: #ffffff;
   border-right-width: 1px;
@@ -88,7 +90,7 @@
   position: absolute;
   width: 19px;
   height: 19px;
-  top: 132px;
+  top: 153px;
   left: 44px;
   background-color: #ffffff;
 }
@@ -97,7 +99,7 @@
   position: absolute;
   width: 19px;
   height: 19px;
-  top: 132px;
+  top: 153px;
   left: 62px;
   background-color: #ffffff;
   border-left-width: 1px;
@@ -109,7 +111,7 @@
   left: 27px;
   position: absolute;
   height: 12px;
-  top: 136px;
+  top: 153px;
   font-family: "Inter-Bold", Helvetica;
   font-weight: 700;
   color: #000000;
@@ -123,7 +125,7 @@
   left: 65px;
   position: absolute;
   height: 12px;
-  top: 136px;
+  top: 153px;
   font-family: "Inter-Bold", Helvetica;
   font-weight: 700;
   color: #000000;
@@ -137,7 +139,7 @@
   left: 46px;
   position: absolute;
   height: 12px;
-  top: 136px;
+  top: 153px;
   font-family: "Inter-Bold", Helvetica;
   font-weight: 700;
   color: #000000;
@@ -429,6 +431,256 @@ nav {
 
 #main-body {
   display: flex;
+}
+
+.box-side {
+  width: 299px;
+  height: 521px;
+  outline-style: solid;
+  border-radius: 17px 17px 17px 17px;
+}
+
+.box-side .group-side {
+  width: 319px;
+  height: 505px;
+  top: 0;
+  left: 0;
+}
+
+.box-side .overlap-group-side {
+  position: relative;
+  width: 299px;
+  height: 405px;
+  background-color: #ffffff;
+  border-radius: 17px;
+}
+
+.box-side .overlap-side {
+  position: absolute;
+  width: 299px;
+  height: 131px;
+  top: 354px;
+  left: 0;
+}
+
+.box-side .rectangle-100 {
+  position: absolute;
+  width: 299px;
+  height: 97px;
+  top: 54px;
+  left: 0;
+  background-color: #ff0000;
+  border-radius: 0px 0px 17px 17px;
+}
+
+.box-side .background-side {
+  position: absolute;
+  width: 265px;
+  height: 32px;
+  top: 54px;
+  left: 34px;
+  background-color: #ffffff;
+  border-radius: 0px 0px 0px 17px;
+}
+
+.box-side .text-head-name {
+  position: absolute;
+  top: 40px;
+  left: 100px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.box-side .text-wrapper {
+  position: absolute;
+  height: 12px;
+  top: 111px;
+  left: 195px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-side .rectangle-20 {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  top: 107px;
+  left: 24px;
+  background-color: #ffffff;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-color: #000000;
+}
+
+.box-side .rectangle-30 {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  top: 107px;
+  left: 43px;
+  background-color: #ffffff;
+}
+
+.box-side .rectangle-40 {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  top: 107px;
+  left: 62px;
+  background-color: #ffffff;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-color: #000000;
+}
+
+.box-side .text-wrapper-20 {
+  left: 27px;
+  position: absolute;
+  height: 12px;
+  top: 111px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-side .text-wrapper-30 {
+  left: 65px;
+  position: absolute;
+  height: 12px;
+  top: 111px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-side .text-wrapper-40 {
+  left: 45px;
+  position: absolute;
+  height: 12px;
+  top: 111px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-side .rectangle-50 {
+  position: absolute;
+  width: 182px;
+  height: 70px;
+  top: 0;
+  left: 66px;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.box-side .text-wrapper-50 {
+  position: absolute;
+  top: 20px;
+  left: 91px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box-side ol {
+  position: absolute;
+  top: 64px;
+  left: -20px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 11px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.box-side .text-wrapper-60 {
+  position: absolute;
+  top: 185px;
+  left: 27px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.box-side .head-office {
+  position: absolute;
+  width: 221px;
+  top: 211px;
+  left: 27px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.box-side .office-span {
+  font-weight: 700;
+}
+
+.box-side .text-wrapper-70 {
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+}
+
+.box-side .site-office {
+  position: absolute;
+  width: 221px;
+  top: 272px;
+  left: 27px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.image-side {
+  width: 263px;
+  height: 175px;
+}
+
+.box-side .alamkaryalogo {
+  position: absolute;
+  width: 263px;
+  height: 175px;
+  left: 12px;
+  top: 100px;
+  object-fit: cover;
+  opacity: 0.3;
 }
 
 @media screen and (max-width: 599px) {
