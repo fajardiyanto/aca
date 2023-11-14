@@ -60,6 +60,13 @@ func (s *PermitService) BacksideHTML(c *gin.Context) {
 
 func (s *PermitService) CreatePermit(c *gin.Context) {
 	id := uuid.NewString()
+
+	var dataUser models.Permit
+	if err := s.db.Where("name = ?", c.PostForm("name")).First(&dataUser).Error; err != nil {
+		c.Redirect(http.StatusFound, fmt.Sprintf("/list/permit?error=you have already have permit"))
+		return
+	}
+
 	file, err := c.FormFile("file")
 	if err != nil {
 		c.Redirect(http.StatusFound, fmt.Sprintf("/create/permit?error=%s", err.Error()))
@@ -96,7 +103,7 @@ func (s *PermitService) CreatePermit(c *gin.Context) {
 
 func (s *PermitService) ListPermit(c *gin.Context) {
 	data := make([]models.Permit, 0)
-	if err := s.db.Find(&data).Error; err != nil {
+	if err := s.db.Where("name = ?", c.Query("name")).Find(&data).Error; err != nil {
 		c.JSON(http.StatusNotFound, err.Error())
 		return
 	}
@@ -106,8 +113,21 @@ func (s *PermitService) ListPermit(c *gin.Context) {
 
 func (s *PermitService) GetDetailPermit(c *gin.Context) {
 	var data models.Permit
-	if err := s.db.Where("id = ?", c.Query("id")).Find(&data).Error; err != nil {
+	if err := s.db.Where("id = ?", c.Query("id")).First(&data).Error; err != nil {
 		c.Redirect(http.StatusFound, fmt.Sprintf("/list/permit?error=%s", err.Error()))
+		return
+	}
+
+	c.JSON(http.StatusOK, data)
+}
+
+func (s *PermitService) GetDetailPermitByName(c *gin.Context) {
+	var data models.Permit
+	if err := s.db.Where("name = ?", c.Query("name")).First(&data).Error; err != nil {
+		c.JSON(http.StatusNotFound, gin.H{
+			"code":    http.StatusNotFound,
+			"message": "data not found",
+		})
 		return
 	}
 

@@ -80,12 +80,6 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css
     <div class="row" id="body-row">
       <div id="sidebar-container" class="sidebar-expanded d-none d-md-block bg-primary">
         <ul id="list-group-bar" class="list-group">
-          <a href="/home" class="bg-primary list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-start align-items-center">
-              <span class="fa fa-home fa-fw mr-3"></span>
-              <span class="menu-collapsed">Home</span>
-            </div>
-          </a>
           <a
             href="#submenu2"
             data-toggle="collapse"
@@ -94,7 +88,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css
           >
             <div class="d-flex w-100 justify-content-start align-items-center">
               <span class="fa fa-list fa-fw mr-3"></span>
-              <span class="menu-collapsed">Permit</span>
+              <span class="menu-collapsed">My Permit</span>
               <span class="submenu-icon ml-auto"></span>
             </div>
           </a>
@@ -106,6 +100,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css
               <span class="menu-collapsed">List Permit</span>
             </a>
             <a
+              id="create-permit"
               href="/create/permit"
               class="list-group-item list-group-item-action bg-primary text-white"
             >
@@ -145,6 +140,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css
     <script src="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js
 "></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
     <script>
         function logout() {
@@ -158,28 +154,41 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js
             });
         }
 
-      $(document).ready(function () {
-        let currentPath = document.location.pathname;
+        $(document).ready(function () {
+          const value = $.cookie("user-name");
 
-        blockListPath = ["/generate/permit", "/login", "/backside/permit"];
-        $.each(blockListPath, function (index, value) {
-          if (currentPath == value) {
-            var element = document.getElementById("side-nav");
-            var elemetListGroup = document.getElementById("list-group-bar");
+          $.ajax({
+            url: "/detail/permit/by-name?name=" + value,
+            method: "get",
+            success: function (result) {
+              if (result.code !== 404) {
+                const element = document.getElementById("create-permit");
+                element.classList.add("d-none");
+              }
+            },
+          });
 
-            element.classList.add("d-none");
-            elemetListGroup.classList.add("d-none");
+          let currentPath = document.location.pathname;
 
-            $("#sidebar-container").addClass("bg-white");
-            $("#col-content").removeClass("col");
-            $("#card-content").removeClass("card");
-            $("#card-body-content").removeClass("card-body");
-            $("#body-row").removeClass("row");
+          const blockListPath = ["/generate/permit", "/login", "/backside/permit"];
+          $.each(blockListPath, function (index, value) {
+            if (currentPath === value) {
+              const element = document.getElementById("side-nav");
+              const elementListGroup = document.getElementById("list-group-bar");
 
-            $("#sidebar-container").css("min-height", "0");
-          }
+              element.classList.add("d-none");
+              elementListGroup.classList.add("d-none");
+
+              $("#sidebar-container").addClass("bg-white");
+              $("#col-content").removeClass("col");
+              $("#card-content").removeClass("card");
+              $("#card-body-content").removeClass("card-body");
+              $("#body-row").removeClass("row");
+
+              $("#sidebar-container").css("min-height", "0");
+            }
+          });
         });
-      });
     </script>
   </body>
 </html>

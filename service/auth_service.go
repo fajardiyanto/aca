@@ -39,12 +39,12 @@ func (s *AuthService) Register(c *gin.Context) {
 	}
 
 	data := models.Auth{
-		UserID: uuid.NewString(),
-		Name: req.Name,
+		UserID:   uuid.NewString(),
+		Name:     req.Name,
 		Password: string(hash),
 	}
 
-	if err := s.db.Save(&data).Error; err != nil {
+	if err = s.db.Save(&data).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, err.Error())
 		return
 	}
@@ -84,7 +84,8 @@ func (s *AuthService) Login(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, err.Error())
 	}
 
-	c.SetCookie("token", token, 86400*100, "/", "", false, true)
+	c.SetCookie("user-name", data.Name, 86400*100, "/", "", false, false)
+	c.SetCookie("token", token, 86400*100, "/", "", false, false)
 	c.Set("token", token)
 
 	c.JSON(200, gin.H{
@@ -95,17 +96,20 @@ func (s *AuthService) Login(c *gin.Context) {
 }
 
 func (s *AuthService) Logout(c *gin.Context) {
-	cookieName := "token"
-
-    expiredCookie := &http.Cookie{
-        Name:     cookieName,
-        Value:    "",
-        Expires:  time.Unix(0, 0),
-        MaxAge:   -1,
-        HttpOnly: true,
-    }
-
-    http.SetCookie(c.Writer, expiredCookie)
+	s.RemoveCookie("user-name", c)
+	s.RemoveCookie("token", c)
 
 	c.Redirect(http.StatusFound, "/login")
+}
+
+func (s *AuthService) RemoveCookie(name string, c *gin.Context) {
+	expiredCookie := &http.Cookie{
+		Name:     name,
+		Value:    "",
+		Expires:  time.Unix(0, 0),
+		MaxAge:   -1,
+		HttpOnly: true,
+	}
+
+	http.SetCookie(c.Writer, expiredCookie)
 }

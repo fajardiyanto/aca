@@ -5,7 +5,6 @@ import (
 	"time"
 
 	"github.com/aca/permit/database"
-	"github.com/aca/permit/middleware"
 	"github.com/aca/permit/service"
 	"github.com/foolin/goview"
 	"github.com/foolin/goview/supports/ginview"
@@ -52,7 +51,7 @@ func main() {
 	r.POST("/register", svcAuth.Register)
 	r.GET("/logout", svcAuth.Logout)
 
-	r.Use(middleware.MainMiddleware)
+	//r.Use(middleware.MainMiddleware)
 
 	r.GET("/home", svcPermit.GetIndex)
 	r.GET("/list/permit", svcPermit.ListPermitHTML)
@@ -64,6 +63,7 @@ func main() {
 	r.GET("/update/permit", svcPermit.UpdatePermitHTML)
 	r.POST("/update/permit", svcPermit.UpdatePermit)
 	r.GET("/backside/permit", svcPermit.BacksideHTML)
+	r.GET("/detail/permit/by-name", svcPermit.GetDetailPermitByName)
 
 	r.GET("/generate/permit", svcPermit.PagePermit)
 
