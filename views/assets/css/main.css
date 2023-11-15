@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:800,500,700,600");
+
 .box {
   width: 299px;
   height: 521px;
@@ -681,6 +683,515 @@ nav {
   top: 100px;
   object-fit: cover;
   opacity: 0.3;
+}
+
+.box-simper {
+  width: 299px;
+  height: 519px;
+  outline-style: solid;
+  border-radius: 17px 17px 17px 17px;
+}
+
+.box-simper .group-simper {
+  width: 345px;
+  height: 519px;
+  top: 0;
+  left: 0;
+}
+
+.box-simper .overlap-simper {
+  position: relative;
+  width: 299px;
+  height: 519px;
+}
+
+.box-simper .rectangle-simper {
+  position: absolute;
+  width: 299px;
+  height: 518px;
+  top: 1px;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 17px;
+}
+
+.box-simper .div-simper {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  top: 492px;
+  left: 204px;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.box-simper .rectangle-simper-2 {
+  width: 19px;
+  height: 19px;
+  top: 492px;
+  left: 223px;
+  background-color: #ffffff;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  position: absolute;
+  border-color: #000000;
+}
+
+.box-simper .rectangle-simper-3 {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  top: 492px;
+  left: 242px;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.box-simper .text-wrapper-simper {
+  height: 12px;
+  top: 496px;
+  left: 206px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  white-space: nowrap;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+}
+
+.box-simper .text-wrapper-simper-2 {
+  height: 12px;
+  top: 496px;
+  left: 245px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  white-space: nowrap;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+}
+
+.box-simper .text-wrapper-simper-3 {
+  height: 12px;
+  top: 496px;
+  left: 225px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  white-space: nowrap;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+}
+
+.box-simper .rectangle-simper-4 {
+  width: 182px;
+  height: 70px;
+  top: 400px;
+  left: 60px;
+  border-radius: 8px;
+  border: 2px solid;
+  position: absolute;
+  border-color: #000000;
+}
+
+.box-simper .head-of-eng-simper {
+  position: absolute;
+  top: 440px;
+  left: 94px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.box-simper .text-wrapper-simper-4 {
+  position: absolute;
+  top: 201px;
+  left: 141px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18.2px;
+  white-space: nowrap;
+}
+
+.box-simper .rectangle-simper-5 {
+  position: absolute;
+  width: 299px;
+  height: 145px;
+  top: 0;
+  left: 0;
+  background-color: #100c95;
+  border-radius: 17px 17px 0px 0px;
+}
+
+.box-simper .rectangle-simper-6 {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  top: 58px;
+  left: 24px;
+  background-color: #ffffff;
+}
+
+.box-simper .overlap-group-wrapper-simper {
+  position: absolute;
+  width: 19px;
+  height: 17px;
+  top: 58px;
+  left: 24px;
+}
+
+.box-simper .overlap-group-simper {
+  position: relative;
+  width: 17px;
+  height: 17px;
+  background-color: #ffe500;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.box-simper .text-wrapper-simper-5 {
+  position: absolute;
+  top: -1px;
+  left: 2px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.box-simper .overlap-wrapper-simper {
+  position: absolute;
+  width: 19px;
+  height: 17px;
+  top: 58px;
+  left: 73px;
+}
+
+.box-simper .div-wrapper-simper {
+  position: relative;
+  width: 17px;
+  height: 17px;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.box-simper .text-wrapper-simper-6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.box-simper .group-simper-2 {
+  position: absolute;
+  width: 19px;
+  height: 17px;
+  top: 58px;
+  left: 48px;
+}
+
+.box-simper .text-wrapper-simper-7 {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.box-simper .text-wrapper-simper-8 {
+  top: 40px;
+  left: 22px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 10px;
+  position: absolute;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box-simper .text-wrapper-simper-9 {
+  position: absolute;
+  top: 15px;
+  left: 122px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box-simper .rectangle-simper-7 {
+  position: absolute;
+  width: 84px;
+  height: 84px;
+  top: 58px;
+  left: 192px;
+  background-color: #ff0000;
+}
+
+.box-simper .group-simper-3 {
+  position: absolute;
+  width: 19px;
+  height: 17px;
+  top: 81px;
+  left: 204px;
+}
+
+.box-simper .group-simper-4 {
+  position: absolute;
+  width: 19px;
+  height: 17px;
+  top: 81px;
+  left: 244px;
+}
+
+.box-simper .group-simper-5 {
+  position: absolute;
+  width: 19px;
+  height: 17px;
+  top: 81px;
+  left: 224px;
+}
+
+.box-simper .text-wrapper-simper-10 {
+  top: 63px;
+  left: 198px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 10px;
+  position: absolute;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box-simper .group-simper-6 {
+  position: absolute;
+  width: 19px;
+  height: 17px;
+  top: 122px;
+  left: 195px;
+}
+
+.box-simper .group-simper-7 {
+  position: absolute;
+  width: 19px;
+  height: 17px;
+  top: 122px;
+  left: 255px;
+}
+
+.box-simper .text-wrapper-simper-11 {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 11px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box-simper .group-simper-8 {
+  position: absolute;
+  width: 19px;
+  height: 17px;
+  top: 122px;
+  left: 235px;
+}
+
+.box-simper .group-simper-9 {
+  position: absolute;
+  width: 19px;
+  height: 17px;
+  top: 122px;
+  left: 215px;
+}
+
+.box-simper .text-wrapper-simper-12 {
+  position: absolute;
+  top: 104px;
+  left: 201px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box-simper .text-wrapper-simper-13 {
+  position: absolute;
+  top: 79px;
+  left: 22px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box-simper .text-wrapper-simper-14 {
+  top: 99px;
+  position: absolute;
+  left: 22px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box-simper .text-wrapper-simper-15 {
+  top: 117px;
+  position: absolute;
+  left: 22px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box-simper .text-wrapper-simper-16 {
+  top: 79px;
+  left: 100px;
+  position: absolute;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box-simper .text-wrapper-simper-17 {
+  top: 100px;
+  left: 99px;
+  position: absolute;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box-simper .text-wrapper-simper-18 {
+  top: 117px;
+  left: 98px;
+  position: absolute;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box-simper .text-wrapper-simper-19 {
+  top: 159px;
+  left: 77px;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 16px;
+  position: absolute;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.box-simper .group-simper-10 {
+  position: absolute;
+  width: 272px;
+  height: 138px;
+  top: 197px;
+  left: 15px;
+}
+
+.box-simper .kehilangan-SIMPER {
+  position: absolute;
+  top: 343px;
+  left: 36px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #ff0000;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 13px;
+}
+
+.box-simper .text-wrapper-simper-28 {
+  position: absolute;
+  height: 12px;
+  top: 480px;
+  left: 204px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 8px;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+table,
+td {
+  text-align: center;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 599px) {
