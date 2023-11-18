@@ -13,6 +13,8 @@ type Permit struct {
 	Position    string    `gorm:"column:position" json:"position"`
 	Image       string    `gorm:"column:image" json:"image"`
 	Valid       string    `gorm:"column:valid" json:"valid"`
+	Type        string    `gorm:"column:type" json:"type"`
+	IsSimper    bool      `gorm:"column:is_simper" json:"is_simper"`
 	CreatedAt   time.Time `gorm:"column:created_at" json:"created_at"`
 }
 

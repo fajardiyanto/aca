@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Inter:800,500,700,600");
+@import url("https://use.fontawesome.com/releases/v5.6.1/css/all.css");
 
 .box {
   width: 299px;
@@ -1181,17 +1182,6 @@ nav {
   letter-spacing: 0;
   line-height: 12px;
   white-space: nowrap;
-}
-
-table,
-th,
-td {
-  border: 1px solid black;
-}
-table,
-td {
-  text-align: center;
-  font-weight: 600;
 }
 
 @media screen and (max-width: 599px) {

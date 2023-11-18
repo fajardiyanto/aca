@@ -45,11 +45,14 @@ func main() {
 
 	svcAuth := service.NewAuthService(db)
 	svcPermit := service.NewPermitService(db, *svcAuth)
+	svcPosition := service.NewPositionService(db)
+	svcDepartment := service.NewDepartmentSerivce(db)
 
 	r.GET("/login", svcAuth.LoginHTML)
 	r.POST("/login", svcAuth.Login)
 	r.POST("/register", svcAuth.Register)
 	r.GET("/logout", svcAuth.Logout)
+	r.GET("/me", svcAuth.Me)
 
 	//r.Use(middleware.MainMiddleware)
 
@@ -66,6 +69,17 @@ func main() {
 	r.GET("/detail/permit/by-name", svcPermit.GetDetailPermitByName)
 
 	r.GET("/generate/permit", svcPermit.PagePermit)
+
+	// position
+	r.GET("/list/position", svcPosition.ListPositionHTML)
+	r.GET("/get/position", svcPosition.ListPosition)
+	r.POST("/create/position", svcPosition.CreatePosition)
+	r.GET("/delete/position", svcPosition.DeletePosition)
+
+	r.GET("/list/department", svcDepartment.ListDepartmentHTML)
+	r.GET("/get/department", svcDepartment.ListDepartment)
+	r.POST("/create/department", svcDepartment.CreateDepartment)
+	r.GET("/delete/department", svcDepartment.DeleteDepartment)
 
 	r.Run(":8088")
 }

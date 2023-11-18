@@ -1,6 +1,8 @@
 package service
 
 import (
+	"encoding/json"
+	"fmt"
 	"net/http"
 	"time"
 
@@ -42,6 +44,7 @@ func (s *AuthService) Register(c *gin.Context) {
 		UserID:   uuid.NewString(),
 		Name:     req.Name,
 		Password: string(hash),
+		Role:     req.Role,
 	}
 
 	if err = s.db.Save(&data).Error; err != nil {
@@ -79,7 +82,7 @@ func (s *AuthService) Login(c *gin.Context) {
 		return
 	}
 
-	token, err := utils.CreateToken(data.UserID)
+	token, err := utils.CreateToken(data.UserID, data.Role)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, err.Error())
 	}
@@ -93,6 +96,28 @@ func (s *AuthService) Login(c *gin.Context) {
 		"msg":   "success",
 		"token": token,
 	})
+}
+
+func (s *AuthService) Me(c *gin.Context) {
+	token, err := c.Cookie("token")
+	if err != nil {
+		c.Redirect(http.StatusFound, "/login")
+		return
+	}
+
+	res, err := utils.ExtractTokenID(token)
+	if err != nil {
+		c.Redirect(http.StatusFound, "/login")
+		return
+	}
+
+	var tokenModel models.TokenModel
+	b, _ := json.Marshal(res)
+	if err = json.Unmarshal(b, &tokenModel); err != nil {
+		fmt.Println(err.Error())
+	}
+
+	c.JSON(200, tokenModel)
 }
 
 func (s *AuthService) Logout(c *gin.Context) {

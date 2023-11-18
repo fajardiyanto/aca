@@ -107,6 +107,33 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css
               <span class="menu-collapsed">Create Permit</span>
             </a>
           </div>
+          <a
+            id="setting-menu"
+            href="#submenu3"
+            data-toggle="collapse"
+            aria-expanded="false"
+            class="bg-primary list-group-item list-group-item-action flex-column align-items-start"
+          >
+            <div class="d-flex w-100 justify-content-start align-items-center">
+              <span class="fa fa-wrench fa-fw mr-3"></span>
+              <span class="menu-collapsed">Setting</span>
+              <span class="submenu-icon ml-auto"></span>
+            </div>
+          </a>
+          <div id="submenu3" class="collapse sidebar-submenu">
+            <a
+              href="/list/position"
+              class="list-group-item list-group-item-action bg-primary text-white"
+            >
+              <span class="menu-collapsed">Position</span>
+            </a>
+            <a
+              href="/list/department"
+              class="list-group-item list-group-item-action bg-primary text-white"
+            >
+              <span class="menu-collapsed">Department</span>
+            </a>
+          </div>
         </ul>
       </div>
       <div class="col p-4" id="col-content">
@@ -155,6 +182,15 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js
         }
 
         $(document).ready(function () {
+          $.ajax({
+            url: "/me",
+            method: "get",
+            success: function (result) {
+                const element = document.getElementById("setting-menu");
+                element.classList.add("d-none");
+            },
+          });
+
           const value = $.cookie("user-name");
 
           $.ajax({

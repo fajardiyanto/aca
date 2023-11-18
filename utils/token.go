@@ -11,10 +11,11 @@ import (
 
 var API_SECRET = "2vLv3f46p6qpFL1P"
 
-func CreateToken(userID string) (string, error) {
+func CreateToken(userID string, role string) (string, error) {
 	claims := jwt.MapClaims{}
 	claims["authorized"] = true
 	claims["user_id"] = userID
+	claims["role"] = role
 	claims["exp"] = time.Now().Add(time.Hour * 24).Unix()
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 	return token.SignedString([]byte(API_SECRET))

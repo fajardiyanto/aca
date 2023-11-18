@@ -103,7 +103,7 @@ func (s *PermitService) CreatePermit(c *gin.Context) {
 
 func (s *PermitService) ListPermit(c *gin.Context) {
 	data := make([]models.Permit, 0)
-	if err := s.db.Where("name = ?", c.Query("name")).Find(&data).Error; err != nil {
+	if err := s.db.Find(&data).Where("name = ?", c.Query("name")).Error; err != nil {
 		c.JSON(http.StatusNotFound, err.Error())
 		return
 	}
