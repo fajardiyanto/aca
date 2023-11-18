@@ -63,7 +63,7 @@ func (s *PermitService) CreatePermit(c *gin.Context) {
 
 	var dataUser models.Permit
 	if err := s.db.Where("name = ?", c.PostForm("name")).First(&dataUser).Error; err != nil {
-		c.Redirect(http.StatusFound, fmt.Sprintf("/list/permit?error=you have already have permit"))
+		c.Redirect(http.StatusFound, "/list/permit?error=you have already have permit")
 		return
 	}
 
