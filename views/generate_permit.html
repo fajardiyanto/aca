@@ -13,7 +13,7 @@
 </style>
 <div class="container">
   <div class="row">
-    <div class="col-4">
+    <div class="col-lg-4 col-sm-12 mb-8">
       <div
         id="page-permit"
         class="d-flex align-items-center justify-content-center"
@@ -61,16 +61,16 @@
                 <div class="rectangle-2"></div>
                 <div class="rectangle-3"></div>
                 <div class="rectangle-4"></div>
-                <div class="text-wrapper-3">L1</div>
-                <div class="text-wrapper-4">L3</div>
-                <div class="text-wrapper-5">L2</div>
+                <div class="text-wrapper-3" id="violationL1">L1</div>
+                <div class="text-wrapper-4" id="violationL3">L3</div>
+                <div class="text-wrapper-5" id="violationL2">L2</div>
               </div>
               <div class="overlap-2">
                 <div class="overlap-3">
                   <div class="rectangle-5"></div>
                   <div class="rectangle-6"></div>
                   <div class="text-wrapper-6">MINE PERMIT</div>
-                  <div class="text-wrapper-7">KARYAWAN</div>
+                  <div id="type_permit" class="text-wrapper-7 text-uppercase"></div>
                 </div>
                 <img
                   class="image"
@@ -84,7 +84,7 @@
         </div>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-lg-4 col-sm-12">
       <div id="page-permit" class="d-flex align-items-center justify-content-center">
         <div class="box-side">
           <div class="group-side">
@@ -95,14 +95,20 @@
                 <p class="text-head-name">
                   Marradian Dwi Pujana<br />Kepala Teknik Tambang
                 </p>
-                <div class="text-wrapper">Valid : 13-03-2024</div>
+                <div class="text-wrapper" id="valid_backside">Valid : 13-03-2024</div>
                 <div class="rectangle-20"></div>
                 <div class="rectangle-30"></div>
                 <div class="rectangle-40"></div>
-                <div class="text-wrapper-20">L1</div>
-                <div class="text-wrapper-30">L3</div>
-                <div class="text-wrapper-40">L2</div>
-                <div class="rectangle-50"></div>
+                <div class="text-wrapper-20" id="violation_L1">L1</div>
+                <div class="text-wrapper-30" id="violation_L3">L3</div>
+                <div class="text-wrapper-40" id="violation_L2">L2</div>
+                <div class="rectangle-50 d-flex align-items-center justify-content-center">
+                  <img
+                    src="/assets/images/pak_puja.png"
+                    class="ttd"
+                    alt=""
+                  />
+                </div>
               </div>
               <div class="text-wrapper-50">PERHATIAN</div>
               <p>
@@ -140,7 +146,7 @@
         </div>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-lg-4 col-sm-12" id="simper-card">
       <div class="d-flex align-items-center justify-content-center">
         <div class="box-simper">
           <div class="group-simper">
@@ -149,114 +155,86 @@
               <div class="div-simper"></div>
               <div class="rectangle-simper-2"></div>
               <div class="rectangle-simper-3"></div>
-              <div class="text-wrapper-simper">L3</div>
-              <div class="text-wrapper-simper-2">L1</div>
-              <div class="text-wrapper-simper-3">L2</div>
-              <div class="rectangle-simper-4"></div>
+              <div class="text-wrapper-simper" id="violation_simper_L3">L3</div>
+              <div class="text-wrapper-simper-2" id="violation_simper_L1">L1</div>
+              <div class="text-wrapper-simper-3" id="violation_simper_L2">L2</div>
+              <div class="rectangle-simper-4 d-flex align-items-center justify-content-center">
+                <img
+                  src="/assets/images/pak_puja.png"
+                  class="ttd"
+                  alt=""
+                />
+              </div>
               <p class="head-of-eng-simper">
                 Marradian Dwi Pujana<br />Kepala Teknik Tambang
               </p>
               <div class="rectangle-simper-5"></div>
               <div class="rectangle-simper-6"></div>
               <div class="overlap-group-wrapper-simper">
-                <div class="overlap-group-simper">
-                  <div class="text-wrapper-simper-5">A</div>
+                <div class="overlap-group-simper" id="type_simpol_A">
+                  <p class="text-wrapper-simper-5">A</p>
                 </div>
               </div>
               <div class="overlap-wrapper-simper">
-                <div class="div-wrapper-simper">
-                  <div class="text-wrapper-simper-6">BII</div>
+                <div class="div-wrapper-simper" id="type_simpol_BII">
+                  <p class="text-wrapper-simper-6">BII</p>
                 </div>
               </div>
               <div class="group-simper-2">
-                <div class="div-wrapper-simper">
-                  <div class="text-wrapper-simper-7">BI</div>
+                <div class="div-wrapper-simper" id="type_simpol_BI">
+                  <p class="text-wrapper-simper-7">BI</p>
                 </div>
               </div>
               <div class="text-wrapper-simper-8">JENIS SIMPOL</div>
               <div class="text-wrapper-simper-9">SIMPER</div>
               <div class="rectangle-simper-7"></div>
               <div class="group-simper-3">
-                <div class="overlap-group-simper">
-                  <div class="text-wrapper-simper-5">P</div>
+                <div class="overlap-group-simper" id="type_simper_P">
+                  <p class="text-wrapper-simper-5">P</p>
                 </div>
               </div>
               <div class="group-simper-4">
-                <div class="div-wrapper-simper">
-                  <div class="text-wrapper-simper-5">R</div>
+                <div class="div-wrapper-simper" id="type_simper_R">
+                  <p class="text-wrapper-simper-5">R</p>
                 </div>
               </div>
               <div class="group-simper-5">
-                <div class="div-wrapper-simper">
-                  <div class="text-wrapper-simper-5">Q</div>
+                <div class="div-wrapper-simper" id="type_simper_Q">
+                  <p class="text-wrapper-simper-5">Q</p>
                 </div>
               </div>
               <div class="text-wrapper-simper-10">JENIS SIMPER</div>
               <div class="group-simper-6">
-                <div class="overlap-group-simper">
-                  <div class="text-wrapper-simper-5">A</div>
+                <div class="overlap-group-simper" id="gol_darah_A">
+                  <p class="text-wrapper-simper-5">A</p>
                 </div>
               </div>
               <div class="group-simper-7">
-                <div class="div-wrapper-simper">
-                  <div class="text-wrapper-simper-11">AB</div>
+                <div class="div-wrapper-simper" id="gol_darah_AB">
+                  <p class="text-wrapper-simper-11">AB</p>
                 </div>
               </div>
               <div class="group-simper-8">
-                <div class="div-wrapper-simper">
-                  <div class="text-wrapper-simper-5">O</div>
+                <div class="div-wrapper-simper" id="gol_darah_O">
+                  <p class="text-wrapper-simper-5">O</p>
                 </div>
               </div>
               <div class="group-simper-9">
-                <div class="div-wrapper-simper">
-                  <div class="text-wrapper-simper-5">B</div>
+                <div class="div-wrapper-simper" id="gol_darah_B">
+                  <p class="text-wrapper-simper-5">B</p>
                 </div>
               </div>
               <div class="text-wrapper-simper-12">GOL DARAH</div>
               <div class="text-wrapper-simper-13">No SIMPOL</div>
               <div class="text-wrapper-simper-14">Masa Berlaku</div>
               <div class="text-wrapper-simper-15">Masa SIMPER</div>
-              <div class="text-wrapper-simper-16">: 941019310641</div>
-              <div class="text-wrapper-simper-17">: 12-10-2023</div>
-              <div class="text-wrapper-simper-18">: 12-10-2023</div>
+              <div class="text-wrapper-simper-16" id="no_simpol">: 941019310641</div>
+              <div class="text-wrapper-simper-17" id="valid_permit">: 12-10-2023</div>
+              <div class="text-wrapper-simper-18" id="valid_simper">: 12-10-2023</div>
               <div class="text-wrapper-simper-19">JENIS PERALATAN</div>
               <div class="group-simper-10">
-                <table class="col-12 center-table">
-                  <tr>
-                    <td>1</td>
-                    <td>F</td>
-                    <td>P</td>
-                    <td>T</td>
-                    <td>LIGHT VEHICLE</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>F</td>
-                    <td>P</td>
-                    <td>T</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>F</td>
-                    <td>P</td>
-                    <td>T</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>F</td>
-                    <td>P</td>
-                    <td>T</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>F</td>
-                    <td>P</td>
-                    <td>T</td>
-                    <td></td>
-                  </tr>
+                <table class="col-12 center-table" id="vehicle-list">
+                  
                 </table>
               </div>
       
@@ -278,6 +256,13 @@
   crossorigin="anonymous"
 ></script>
 <script>
+  function setBackgroundColorById(elementId, color) {
+    var myDiv = document.getElementById(elementId);
+    if (myDiv) {
+      myDiv.style.backgroundColor = color;
+    }
+  }
+
   $(document).ready(function () {
     var id = new URLSearchParams(window.location.search).get("id");
 
@@ -285,15 +270,86 @@
       url: "/detail/permit?id=" + id,
       method: "get",
       success: function (data) {
-        document.getElementById("name-permit").innerHTML = data.name;
-        document.getElementById("nik-permit").innerHTML = data.nik;
-        document.getElementById("reg-permit").innerHTML = data.region;
-        document.getElementById("company-permit").innerHTML = data.company;
+        const dataPermit = data.permit;
+        const dataSimper = data.simper;
+        if (dataPermit.type !== "karyawan") {
+          var myTextElement = document.getElementById("type_permit");
+          myTextElement.style.fontSize = "17px";
+        }
+
+        switch (dataPermit.violation) {
+            case "L1":
+            case "L2":
+            case "L3":
+              setBackgroundColorById('violation_simper_' + dataPermit.violation, '#ffe500');
+              setBackgroundColorById('violation_' + dataPermit.violation, '#ffe500');
+              setBackgroundColorById('violation' + dataPermit.violation, '#ffe500');
+              break;
+        }
+
+        if (dataPermit.is_simper) {
+          switch (dataSimper.simper_type) {
+            case "P":
+            case "Q":
+            case "R":
+              setBackgroundColorById('type_simper_' + dataSimper.simper_type, '#ffe500');
+              break;
+          }
+
+          switch (dataSimper.simpol) {
+            case "A":
+            case "BI":
+            case "BII":
+              setBackgroundColorById('type_simpol_' + dataSimper.simpol, '#ffe500');
+              break;
+          }
+
+          switch (dataSimper.blood_type) {
+            case "A":
+            case "B":
+            case "O":
+            case "AB":
+              setBackgroundColorById('gol_darah_' + dataSimper.blood_type, '#ffe500');
+              break;
+          }
+
+          
+          let htmlTable = '';
+          for (let i = 0; i < 5; i++) {
+            const row = dataSimper.vehicle[i] || {}; // Use an empty object if the item is undefined
+            const typeVehicle = (row.type_vehicle || '').toUpperCase();
+
+            htmlTable += `
+              <tr>
+                <td>${i + 1}</td>
+                <td style="background-color: ${typeVehicle === 'F' ? '#ffe500' : 'inherit'};">F</td>
+                <td style="background-color: ${typeVehicle === 'P' ? '#ffe500' : 'inherit'};">P</td>
+                <td style="background-color: ${typeVehicle === 'T' ? '#ffe500' : 'inherit'};">T</td>
+                <td>${row.name_vehicle || ''}</td>
+              </tr>
+            `;
+          }
+          $("#vehicle-list").html(htmlTable);
+
+          document.getElementById("valid_simper").innerHTML = `: ${dataSimper.simper_valid}`;
+          document.getElementById("no_simpol").innerHTML = `: ${dataSimper.no_simpol}`;
+        } else {
+          const elementSimper = document.getElementById("simper-card");
+          elementSimper.classList.add("d-none");
+        }
+
+        document.getElementById("name-permit").innerHTML = dataPermit.name;
+        document.getElementById("nik-permit").innerHTML = dataPermit.nik;
+        document.getElementById("reg-permit").innerHTML = dataPermit.region;
+        document.getElementById("company-permit").innerHTML = dataPermit.company;
         document.getElementById("departement-permit").innerHTML =
-          data.departement;
-        document.getElementById("position-permit").innerHTML = data.position;
-        document.getElementById("img-profile").src = "/" + data.image;
-        document.getElementById("valid-permit").innerHTML = data.valid;
+          dataPermit.departement;
+        document.getElementById("position-permit").innerHTML = dataPermit.position;
+        document.getElementById("img-profile").src = "/" + dataPermit.image;
+        document.getElementById("valid-permit").innerHTML = dataPermit.valid;
+        document.getElementById("type_permit").innerHTML = dataPermit.type;
+        document.getElementById("valid_permit").innerHTML = `: ${dataPermit.valid}`;
+        document.getElementById("valid_backside").innerHTML = `Valid : ${dataPermit.valid}`;
       },
     });
   });

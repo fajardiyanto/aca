@@ -81,5 +81,9 @@ func main() {
 	r.POST("/create/department", svcDepartment.CreateDepartment)
 	r.GET("/delete/department", svcDepartment.DeleteDepartment)
 
+	r.GET("/list/employee", svcAuth.RegisterEmployee)
+	r.GET("/get/employee", svcAuth.GetAllUser)
+	r.GET("/delete/employee", svcAuth.DeletelUser)
+
 	r.Run(":8088")
 }

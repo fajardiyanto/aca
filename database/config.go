@@ -24,5 +24,5 @@ func ConnectDB() *gorm.DB {
 	}
 	db.AutoMigrate(&models.Permit{}, &models.Auth{}, &models.Position{}, &models.Simper{}, &models.Department{})
 
-	return db
+	return db.Debug()
 }

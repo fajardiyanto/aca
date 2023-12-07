@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/aca/permit/models"
@@ -27,32 +28,40 @@ func (s *AuthService) LoginHTML(c *gin.Context) {
 	})
 }
 
+func (s *AuthService) RegisterEmployee(c *gin.Context) {
+	c.HTML(http.StatusOK, "create_employee", gin.H{
+		"title": "Tambahkan Karyawan",
+	})
+}
+
 func (s *AuthService) Register(c *gin.Context) {
-	var req models.LoginModel
-	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, err.Error())
-		return
+	req := models.RegisterModel {
+		Email: c.PostForm("email"),
+		Name: c.PostForm("name"),
+		Password: c.PostForm("password"),
+		Role: c.PostForm("role"),
 	}
 
 	hash, err := utils.HashedPassword(req.Password)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, err.Error())
+		c.Redirect(http.StatusFound, fmt.Sprintf("/list/employee?error=%s", err.Error()))
 		return
 	}
 
 	data := models.Auth{
 		UserID:   uuid.NewString(),
 		Name:     req.Name,
+		Email: 	  req.Email,
 		Password: string(hash),
 		Role:     req.Role,
 	}
 
 	if err = s.db.Save(&data).Error; err != nil {
-		c.JSON(http.StatusInternalServerError, err.Error())
+		c.Redirect(http.StatusFound, fmt.Sprintf("/list/employee?error=%s", err.Error()))
 		return
 	}
 
-	c.JSON(http.StatusOK, data)
+	c.Redirect(http.StatusFound, "/list/employee")
 }
 
 func (s *AuthService) Login(c *gin.Context) {
@@ -66,7 +75,7 @@ func (s *AuthService) Login(c *gin.Context) {
 	}
 
 	var data models.Auth
-	if err := s.db.Where("name = ?", req.Name).Find(&data).Error; err != nil {
+	if err := s.db.Where("email = ?", req.Email).Find(&data).Error; err != nil {
 		c.JSON(http.StatusNotFound, gin.H{
 			"error": true,
 			"msg":   err.Error(),
@@ -117,7 +126,16 @@ func (s *AuthService) Me(c *gin.Context) {
 		fmt.Println(err.Error())
 	}
 
-	c.JSON(200, tokenModel)
+	var data models.Auth
+	if err := s.db.Where("user_id = ?", tokenModel.UserID).Find(&data).Error; err != nil {
+		c.JSON(http.StatusNotFound, gin.H{
+			"error": true,
+			"msg":   err.Error(),
+		})
+		return
+	}
+
+	c.JSON(200, data)
 }
 
 func (s *AuthService) Logout(c *gin.Context) {
@@ -137,4 +155,56 @@ func (s *AuthService) RemoveCookie(name string, c *gin.Context) {
 	}
 
 	http.SetCookie(c.Writer, expiredCookie)
+}
+
+func (s *AuthService) GetAllUser(c *gin.Context) {
+	data := make([]models.Auth, 0)
+	if err := s.db.Where("role != ?", "admin").Find(&data).Error; err != nil {
+		c.JSON(http.StatusNotFound, gin.H{
+			"error": true,
+			"msg":   err.Error(),
+		})
+		return
+	}
+
+	c.JSON(200, data)
+}
+
+func (s *AuthService) DeletelUser(c *gin.Context) {
+	var data models.Permit
+	var dataSimper models.Simper
+	var dataUser models.Auth
+	id := c.Query("id")
+
+	if err := s.db.Where("user_id = ?", id).Find(&dataUser).Error; err != nil {
+		c.Redirect(http.StatusFound, fmt.Sprintf("/list/employee?error=%s", err.Error()))
+		return
+	}
+
+	if err := s.db.Where("user_id = ?", id).Delete(&dataUser).Error; err != nil {
+		c.Redirect(http.StatusFound, fmt.Sprintf("/list/employee?error=%s", err.Error()))
+		return
+	}
+
+	if err := s.db.Where("name = ?", dataUser.Name).First(&data).Error; err != nil {
+		c.Redirect(http.StatusFound, fmt.Sprintf("/list/employee?error=%s", err.Error()))
+		return
+	}
+
+	if err := s.db.Where("name = ?", dataUser.Name).Delete(&data).Error; err != nil {
+		c.Redirect(http.StatusFound, fmt.Sprintf("/list/employee?error=%s", err.Error()))
+		return
+	}
+
+	if err := s.db.Where("permit_id = ?", data.PermitID).Delete(&dataSimper).Error; err != nil {
+		c.Redirect(http.StatusFound, fmt.Sprintf("/list/employee?error=%s", err.Error()))
+		return
+	}
+
+	if err := os.Remove(data.Image); err != nil {
+		c.Redirect(http.StatusFound, fmt.Sprintf("/list/employee?error=%s", err.Error()))
+		return
+	}
+
+	c.Redirect(http.StatusFound, "/list/employee")
 }

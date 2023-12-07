@@ -15,6 +15,7 @@ type Permit struct {
 	Valid       string    `gorm:"column:valid" json:"valid"`
 	Type        string    `gorm:"column:type" json:"type"`
 	IsSimper    bool      `gorm:"column:is_simper" json:"is_simper"`
+	Violation   string 	  `gorm:"column:violation" json:"violation"`
 	CreatedAt   time.Time `gorm:"column:created_at" json:"created_at"`
 }
 

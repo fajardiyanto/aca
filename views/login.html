@@ -12,12 +12,12 @@
           </div>
 
           <div class="form-outline form-white mb-4">
-            <label class="form-label" for="typeEmailX">Username</label>
+            <label class="form-label" for="email">Email</label>
             <input
               type="text"
-              id="username"
+              id="email"
               class="form-control"
-              placeholder="username"
+              placeholder="email"
             />
           </div>
 
@@ -42,12 +42,12 @@
           </div>
         </div>
 
-        <div class="text-center">
+        <!-- <div class="text-center">
           <p class="mb-0">
             Don't have an account?
             <a href="#!" class="fw-bold">Register</a>
           </p>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -60,11 +60,11 @@
 <script>
   $(document).ready(function () {
     $("#login-btn").on("click", function () {
-      var name = $("#username").val();
+      var email = $("#email").val();
       var password = $("#password").val();
 
       var jsonData = {
-        name: name,
+        email: email,
         password: password,
       };
 

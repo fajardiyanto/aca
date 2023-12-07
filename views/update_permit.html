@@ -12,7 +12,7 @@
             class="form-control"
             name="name"
             placeholder="Name"
-            required
+            disabled
           />
         </div>
         <label for="reg-permit">Region*</label>
@@ -48,26 +48,23 @@
         />
       </div>
       <div class="form-group">
-        <label for="departement-permit">Department*</label>
-        <input
-          id="departement-permit"
-          type="text"
-          class="form-control"
-          name="departement"
-          placeholder="Departemen"
-          required
-        />
+        <label for="inputDepartement">Departemen*</label>
+        <select id="inputDepartement" name="departement" class="form-control">
+          <option selected>Tidak Ada</option>
+        </select>
       </div>
       <div class="form-group">
-        <label for="position-permit">Jabatan*</label>
-        <input
-          id="position-permit"
-          type="text"
-          class="form-control"
-          name="position"
-          placeholder="Jabatan"
-          required
-        />
+        <label for="inputPosition">Jabatan*</label>
+        <select id="inputPosition" name="position" class="form-control">
+          <option selected>Tidak Ada</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="inputType">Tipe*</label>
+        <select id="inputType" name="type" class="form-control">
+          <option value="karyawan">KARYAWAN</option>
+          <option value="kontraktor">KONTRAKTOR</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="datepicker">Valid Date*</label>
@@ -78,6 +75,102 @@
           id="datepicker"
           required
         />
+      </div>
+      <div class="form-group">
+        <label for="violation">Pelanggaran</label>
+        <select id="violation" name="violation" class="form-control">
+          <option value="L0" selected>Tidak Ada</option>
+          <option value="L3">L3</option>
+          <option value="L2">L2</option>
+          <option value="L1">L1</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="datepicker">Simper</label>
+        <div class="custom-control custom-switch">
+          <input
+            type="checkbox"
+            class="custom-control-input"
+            id="isSimperSwitch"
+            name="is_simper"
+          />
+          <label class="custom-control-label" for="isSimperSwitch"
+            >Membutuhkan Simper?</label
+          >
+        </div>
+      </div>
+      <div id="simper-form" class="d-none">
+        <div class="form-group">
+          <label for="datepicker">Valid Simper*</label>
+          <input
+            type="date"
+            class="form-control"
+            name="simper_valid"
+            id="datepickersimper"
+          />
+        </div>
+        <div class="form-group row">
+          <div class="col">
+            <label for="no_simpol">No Simpol*</label>
+            <input
+              type="number"
+              class="form-control"
+              name="no_simpol"
+              placeholder="No Simpol"
+              id="no_simpol"
+            />
+          </div>
+          <div class="col">
+            <label for="simpol_type">Simpol*</label>
+            <select id="simpol_type" name="simpol" class="form-control">
+              <option value="A" selected>A</option>
+              <option value="BI">BI</option>
+              <option value="BII">BII</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col">
+            <label for="blood_type">Golongan Darah*</label>
+            <select id="blood_type" name="blood_type" class="form-control">
+              <option value="A" selected>A</option>
+              <option value="B">B</option>
+              <option value="O">O</option>
+              <option value="AB">AB</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="simper_type">Jenis Simper*</label>
+            <select id="simper_type" name="simper_type" class="form-control">
+              <option value="P" selected>P</option>
+              <option value="Q">Q</option>
+              <option value="R">R</option>
+            </select>
+          </div>
+        </div>
+        <p class="mt-3 font-weight-bold">Jenis Peralatan</p>
+        <div class="form-group row">
+          <div class="col">
+            <label for="type_vehicle">Type Peralatan</label>
+            <input
+              type="text"
+              class="form-control"
+              name="type_vehicle"
+              id="type_vehicle"
+              placeholder="Type Peralatan"
+            />
+          </div>
+          <div class="col">
+            <label for="name_vehicle">Nama Peralatan</label>
+            <input
+              type="text"
+              class="form-control"
+              name="name_vehicle"
+              id="name_vehicle"
+              placeholder="Nama Peralatan"
+            />
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <label for="imagePermit">Photo Profile</label>
@@ -107,24 +200,90 @@
 <script>
   $(document).ready(function () {
     var id = new URLSearchParams(window.location.search).get("id");
+    var selectDepartment = document.getElementById("inputDepartement");
+    var selectPosition = document.getElementById("inputPosition");
+
+    $("#isSimperSwitch").on("click", function () {
+      const elementSimper = document.getElementById("simper-form");
+      if ($('input[type="checkbox"]').prop("checked")) {
+        $("#simper-form").removeClass("d-none");
+      } else {
+        elementSimper.classList.add("d-none");
+      }
+    });
+
+    $.ajax({
+      url: "/get/department",
+      method: "get",
+      success: function (results) {
+        $.each(results, function (index, row) {
+          var opt = document.createElement("option");
+          opt.value = row.name;
+          opt.innerHTML = row.name;
+          selectDepartment.appendChild(opt);
+        });
+      },
+    });
+
+    $.ajax({
+      url: "/get/position",
+      method: "get",
+      success: function (results) {
+        $.each(results, function (index, row) {
+          var opt = document.createElement("option");
+          opt.value = row.name;
+          opt.innerHTML = row.name;
+          selectPosition.appendChild(opt);
+        });
+      },
+    });
 
     $.ajax({
       url: "/detail/permit?id=" + id,
       method: "get",
       success: function (data) {
-        document.getElementById("name-permit").value = data.name;
-        document.getElementById("nik-permit").value = data.nik;
-        document.getElementById("reg-permit").value = data.region;
-        document.getElementById("company-permit").value = data.company;
-        document.getElementById("departement-permit").value = data.departement;
-        document.getElementById("position-permit").value = data.position;
-        $("#frame").attr("src", "/" + data.image);
+        const dataPermit = data.permit;
+        const dataSimper = data.simper;
+        document.getElementById("name-permit").value = dataPermit.name;
+        document.getElementById("nik-permit").value = dataPermit.nik;
+        document.getElementById("reg-permit").value = dataPermit.region;
+        document.getElementById("company-permit").value = dataPermit.company;
+        document.getElementById("inputDepartement").value =
+          dataPermit.departement;
+        document.getElementById("inputPosition").value = dataPermit.position;
+        document.getElementById("inputType").value = dataPermit.type;
+        document.getElementById("violation").value = dataPermit.violation;
+        $("#frame").attr("src", "/" + dataPermit.image);
+
+        var checkboxElement = document.getElementById("isSimperSwitch");
+        if (dataPermit.is_simper) {
+          checkboxElement.checked = true;
+          $("#simper-form").removeClass("d-none");
+          document.getElementById("simper_type").value = dataSimper.simper_type;
+          document.getElementById("blood_type").value = dataSimper.blood_type;
+          document.getElementById("simpol_type").value = dataSimper.simpol;
+          document.getElementById("no_simpol").value = dataSimper.no_simpol;
+
+          if (dataSimper.vehicle.length > 0) {
+            const nameVehicles = dataSimper.vehicle
+              .map((item) => item.name_vehicle)
+              .join(",");
+
+            const typeVehicles = dataSimper.vehicle
+              .map((item) => item.type_vehicle)
+              .join(",");
+
+            document.getElementById("name_vehicle").value = nameVehicles;
+            document.getElementById("type_vehicle").value = typeVehicles;
+          }
+        }
       },
     });
   });
 
   const today = new Date().toISOString().split("T")[0];
   document.getElementById("datepicker").value = today;
+  document.getElementById("datepickersimper").value = today;
 
   $(document).ready(function () {
     var id = new URLSearchParams(window.location.search).get("id");

@@ -9,17 +9,17 @@
       enctype="multipart/form-data"
     >
       <div class="form-group">
-        <div class="form-group">
-          <label for="inputName">Nama*</label>
-          <input
-            id="inputName"
-            type="text"
-            class="form-control"
-            name="name"
-            placeholder="Name"
-            required
-          />
-        </div>
+        <label for="inputName">Nama*</label>
+        <input
+          id="inputName"
+          type="text"
+          class="form-control"
+          name="name"
+          placeholder="Name"
+          readonly
+        />
+      </div>
+      <div class="form-group">
         <label for="inputRegion">Region*</label>
         <input
           type="text"
@@ -51,23 +51,22 @@
       </div>
       <div class="form-group">
         <label for="inputDepartement">Departemen*</label>
-        <input
-          type="text"
-          class="form-control"
-          name="departement"
-          placeholder="Departemen"
-          required
-        />
+        <select id="inputDepartement" name="departement" class="form-control">
+          <option selected>Tidak Ada</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="inputPosition">Jabatan*</label>
-        <input
-          type="text"
-          class="form-control"
-          name="position"
-          placeholder="Jabatan"
-          required
-        />
+        <select id="inputPosition" name="position" class="form-control">
+          <option selected>Tidak Ada</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="inputType">Tipe*</label>
+        <select id="inputType" name="type" class="form-control">
+          <option value="karyawan" selected>KARYAWAN</option>
+          <option value="kontraktor">KONTRAKTOR</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="datepicker">Valid Date*</label>
@@ -78,6 +77,101 @@
           id="datepicker"
           required
         />
+      </div>
+      <div class="form-group">
+        <label for="violation">Pelanggaran</label>
+        <select id="violation" name="violation" class="form-control">
+          <option value="" selected>Tidak Ada</option>
+          <option value="L3">L3</option>
+          <option value="L2">L2</option>
+          <option value="L1">L1</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="datepicker">Simper</label>
+        <div class="custom-control custom-switch">
+          <input
+            type="checkbox"
+            class="custom-control-input"
+            id="isSimperSwitch"
+            name="is_simper"
+          />
+          <label class="custom-control-label" for="isSimperSwitch"
+            >Membutuhkan Simper?</label
+          >
+        </div>
+      </div>
+      <div id="simper-form" class="d-none">
+        <div class="form-group">
+          <label for="datepicker">Valid Simper*</label>
+          <input
+            type="date"
+            class="form-control"
+            name="simper_valid"
+            id="datepickersimper"
+          />
+        </div>
+        <div class="form-group row">
+          <div class="col">
+            <label for="no_simpol">No Simpol*</label>
+            <input
+              type="number"
+              class="form-control"
+              name="no_simpol"
+              placeholder="No Simpol"
+              id="no_simpol"
+            />
+          </div>
+          <div class="col">
+            <label for="simpol_type">Simpol*</label>
+            <select id="simpol_type" name="simpol" class="form-control">
+              <option value="A" selected>A</option>
+              <option value="BI">BI</option>
+              <option value="BII">BII</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col">
+            <label for="blood_type">Golongan Darah*</label>
+            <select id="blood_type" name="blood_type" class="form-control">
+              <option value="A" selected>A</option>
+              <option value="B">B</option>
+              <option value="O">O</option>
+              <option value="AB">AB</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="simper_type">Jenis Simper*</label>
+            <select id="simper_type" name="simper_type" class="form-control">
+              <option value="P" selected>P</option>
+              <option value="Q">Q</option>
+              <option value="R">R</option>
+            </select>
+          </div>
+        </div>
+        <h6 class="mt-3 font-weight-bold">Jenis Peralatan</h5>
+        <small id="emailHelp" class="form-text text-muted">Gunakan koma (,) jika lebih dari satu.</small>
+        <div class="form-group row">
+          <div class="col">
+            <label for="simper_type">Type Peralatan</label>
+            <input
+              type="text"
+              class="form-control"
+              name="type_vehicle"
+              placeholder="Type Peralatan"
+            />
+          </div>
+          <div class="col">
+            <label for="blood_type">Nama Peralatan</label>
+            <input
+              type="text"
+              class="form-control"
+              name="name_vehicle"
+              placeholder="Nama Peralatan"
+            />
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <label for="imagePermit">Photo Profile*</label>
@@ -105,13 +199,62 @@
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
   crossorigin="anonymous"
 ></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script
+  type="text/javascript"
+  src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"
+></script>
 <script>
   const today = new Date().toISOString().split("T")[0];
   document.getElementById("datepicker").value = today;
+  document.getElementById("datepickersimper").value = today;
 
   $(document).ready(function () {
-    document.getElementById("inputName").value = $.cookie("user-name");
+    var selectDepartment = document.getElementById("inputDepartement");
+    var selectPosition = document.getElementById("inputPosition");
+
+    $.ajax({
+      url: "/me",
+      method: "get",
+      success: function (result) {
+        console.log(result)
+        document.getElementById("inputName").value = result.name;
+      },
+    });
+
+    $.ajax({
+      url: "/get/department",
+      method: "get",
+      success: function (results) {
+        $.each(results, function (index, row) {
+          var opt = document.createElement("option");
+          opt.value = row.name;
+          opt.innerHTML = row.name;
+          selectDepartment.appendChild(opt);
+        });
+      },
+    });
+
+    $.ajax({
+      url: "/get/position",
+      method: "get",
+      success: function (results) {
+        $.each(results, function (index, row) {
+          var opt = document.createElement("option");
+          opt.value = row.name;
+          opt.innerHTML = row.name;
+          selectPosition.appendChild(opt);
+        });
+      },
+    });
+
+    $("#isSimperSwitch").on("click", function () {
+      const elementSimper = document.getElementById("simper-form");
+      if ($('input[type="checkbox"]').prop("checked")) {
+        $("#simper-form").removeClass("d-none");
+      } else {
+        elementSimper.classList.add("d-none");
+      }
+    });
 
     $("#create-permit").on("click", ".create-permit-btn", function () {
       $('button[type="submit"]').click(function (event) {

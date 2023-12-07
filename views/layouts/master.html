@@ -133,6 +133,12 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css
             >
               <span class="menu-collapsed">Department</span>
             </a>
+            <a
+              href="/list/employee"
+              class="list-group-item list-group-item-action bg-primary text-white"
+            >
+              <span class="menu-collapsed">Tambahkan Karyawan</span>
+            </a>
           </div>
         </ul>
       </div>
@@ -186,8 +192,10 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js
             url: "/me",
             method: "get",
             success: function (result) {
+              if (result.role !== "admin") {
                 const element = document.getElementById("setting-menu");
                 element.classList.add("d-none");
+              }
             },
           });
 
