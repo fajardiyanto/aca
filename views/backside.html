@@ -1,128 +1,698 @@
 {{ define "content" }}
-<div class="d-flex align-items-center justify-content-center">
-  <div class="box-simper">
-    <div class="group-simper">
-      <div class="overlap-simper">
-        <div class="rectangle-simper"></div>
-        <div class="div-simper"></div>
-        <div class="rectangle-simper-2"></div>
-        <div class="rectangle-simper-3"></div>
-        <div class="text-wrapper-simper">L3</div>
-        <div class="text-wrapper-simper-2">L1</div>
-        <div class="text-wrapper-simper-3">L2</div>
-        <div class="rectangle-simper-4"></div>
-        <p class="head-of-eng-simper">
-          Marradian Dwi Pujana<br />Kepala Teknik Tambang
-        </p>
-        <div class="rectangle-simper-5"></div>
-        <div class="rectangle-simper-6"></div>
-        <div class="overlap-group-wrapper-simper">
-          <div class="overlap-group-simper">
-            <div class="text-wrapper-simper-5">A</div>
-          </div>
-        </div>
-        <div class="overlap-wrapper-simper">
-          <div class="div-wrapper-simper">
-            <div class="text-wrapper-simper-6">BII</div>
-          </div>
-        </div>
-        <div class="group-simper-2">
-          <div class="div-wrapper-simper">
-            <div class="text-wrapper-simper-7">BI</div>
-          </div>
-        </div>
-        <div class="text-wrapper-simper-8">JENIS SIMPOL</div>
-        <div class="text-wrapper-simper-9">SIMPER</div>
-        <div class="rectangle-simper-7"></div>
-        <div class="group-simper-3">
-          <div class="overlap-group-simper">
-            <div class="text-wrapper-simper-5">P</div>
-          </div>
-        </div>
-        <div class="group-simper-4">
-          <div class="div-wrapper-simper">
-            <div class="text-wrapper-simper-5">R</div>
-          </div>
-        </div>
-        <div class="group-simper-5">
-          <div class="div-wrapper-simper">
-            <div class="text-wrapper-simper-5">Q</div>
-          </div>
-        </div>
-        <div class="text-wrapper-simper-10">JENIS SIMPER</div>
-        <div class="group-simper-6">
-          <div class="overlap-group-simper">
-            <div class="text-wrapper-simper-5">A</div>
-          </div>
-        </div>
-        <div class="group-simper-7">
-          <div class="div-wrapper-simper">
-            <div class="text-wrapper-simper-11">AB</div>
-          </div>
-        </div>
-        <div class="group-simper-8">
-          <div class="div-wrapper-simper">
-            <div class="text-wrapper-simper-5">O</div>
-          </div>
-        </div>
-        <div class="group-simper-9">
-          <div class="div-wrapper-simper">
-            <div class="text-wrapper-simper-5">B</div>
-          </div>
-        </div>
-        <div class="text-wrapper-simper-12">GOL DARAH</div>
-        <div class="text-wrapper-simper-13">No SIMPOL</div>
-        <div class="text-wrapper-simper-14">Masa Berlaku</div>
-        <div class="text-wrapper-simper-15">Masa SIMPER</div>
-        <div class="text-wrapper-simper-16">: 941019310641</div>
-        <div class="text-wrapper-simper-17">: 12-10-2023</div>
-        <div class="text-wrapper-simper-18">: 12-10-2023</div>
-        <div class="text-wrapper-simper-19">JENIS PERALATAN</div>
-        <div class="group-simper-10">
-          <table class="col-12 center-table">
-            <tr>
-              <td>1</td>
-              <td>F</td>
-              <td>P</td>
-              <td>T</td>
-              <td>LIGHT VEHICLE</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>F</td>
-              <td>P</td>
-              <td>T</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>F</td>
-              <td>P</td>
-              <td>T</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>F</td>
-              <td>P</td>
-              <td>T</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>F</td>
-              <td>P</td>
-              <td>T</td>
-              <td></td>
-            </tr>
-          </table>
-        </div>
+<style>
+  .box-simper-front {
+    width: 299px;
+    height: 505px;
+    outline-style: solid;
+    border-radius: 17px 17px 17px 17px;
+  }
 
-        <p class="kehilangan-SIMPER">
-          Kehilangan SIMPER &amp; PERMIT dikenakan denda<br />Rp. 100.000,-<br />SIMPER
-          wajib dibawa pada saat<br />mengoperasikan unit atau kendaraan
-        </p>
-        <div class="text-wrapper-simper-28">Pelanggaran</div>
+  .box-simper-front .group-simper-front {
+    width: 343px;
+    height: 505px;
+    top: 0;
+    left: 0;
+  }
+
+  .box-simper-front .overlap-group-simper-front {
+    position: relative;
+    width: 299px;
+    height: 505px;
+    background-color: #ffffff;
+    border-radius: 17px;
+  }
+
+  .box-simper-front .overlap-simper-front {
+    position: absolute;
+    width: 299px;
+    height: 145px;
+    top: 0;
+    left: 0;
+    background-color: #ff0000;
+    border-radius: 17px 17px 0px 0px;
+  }
+
+  .box-simper-front .div-simper-front {
+    position: absolute;
+    width: 140px;
+    height: 145px;
+    top: 0;
+    left: 159px;
+  }
+
+  .box-simper-front .rectangle-simper-front {
+    position: absolute;
+    width: 140px;
+    height: 85px;
+    top: 60px;
+    left: 0;
+    background-color: #000000;
+  }
+
+  .box-simper-front .rectangle-simper-front-2 {
+    position: absolute;
+    width: 140px;
+    height: 94px;
+    top: 0;
+    left: 0;
+    background-color: #100c95;
+    border-radius: 0px 17px 0px 0px;
+  }
+
+  .box-simper-front .text-wrapper-simper-front {
+    position: absolute;
+    width: 90px;
+    top: 37px;
+    left: 25px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 2.2px;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-2 {
+    position: absolute;
+    top: 109px;
+    left: 11px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .image-simper-front {
+    width: 121px;
+    height: 80px;
+    top: 14px;
+    left: 21px;
+    position: absolute;
+    object-fit: cover;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-3 {
+    position: absolute;
+    width: 141px;
+    top: 114px;
+    left: 11px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 10px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  .box-simper-front .data-user-simper {
+    position: absolute;
+    width: 213px;
+    height: 84px;
+    top: 147px;
+    left: 15px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+
+  .data-user-simper .reg-simper-front {
+    display: inline;
+    padding: 0;
+    margin-left: 50px;
+  }
+
+  .data-user-simper .name-simper-front {
+    display: inline;
+    padding: 0;
+    margin-left: 42px;
+  }
+
+  .data-user-simper .nik-simper-front {
+    display: inline;
+    padding: 0;
+    margin-left: 52px;
+  }
+
+  .data-user-simper .company-simper-front {
+    display: inline;
+    padding: 0;
+    margin-left: 15px;
+  }
+
+  .data-user-simper .departement-simper-front {
+    display: inline;
+    padding: 0;
+    margin-left: 14px;
+  }
+
+  .data-user-simper .position-simper-front {
+    display: inline;
+    padding: 0;
+    margin-left: 33px;
+  }
+
+  .box-simper-front .div-wrapper-simper-front {
+    position: absolute;
+    width: 25px;
+    height: 23px;
+    top: 461px;
+    left: 24px;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #000000;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-4 {
+    width: 17px;
+    height: 14px;
+    top: 4px;
+    left: 7px;
+    color: #000000;
+    font-size: 12px;
+    letter-spacing: 0;
+    position: absolute;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .overlap-simper-front-2 {
+    position: absolute;
+    width: 25px;
+    height: 23px;
+    top: 461px;
+    left: 49px;
+    background-color: #ffffff;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #000000;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-5 {
+    width: 19px;
+    height: 14px;
+    top: 4px;
+    left: 4px;
+    color: #000000;
+    font-size: 12px;
+    letter-spacing: 0;
+    position: absolute;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .overlap-simper-front-3 {
+    position: absolute;
+    width: 25px;
+    height: 23px;
+    top: 461px;
+    left: 74px;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #000000;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-6 {
+    width: 20px;
+    height: 14px;
+    top: 4px;
+    left: 4px;
+    color: #000000;
+    font-size: 12px;
+    letter-spacing: 0;
+    position: absolute;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-7 {
+    position: absolute;
+    height: 12px;
+    top: 446px;
+    left: 24px;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 10px;
+    letter-spacing: -0.2px;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .overlap-simper-front-4 {
+    position: absolute;
+    width: 299px;
+    height: 29px;
+    top: 238px;
+    left: 0;
+    background-color: #100c95;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-8 {
+    position: absolute;
+    height: 12px;
+    top: 9px;
+    left: 32px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .overlap-simper-front-5 {
+    position: absolute;
+    width: 24px;
+    height: 23px;
+    top: 3px;
+    left: 163px;
+    background-color: #ffe500;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-9 {
+    height: 12px;
+    top: 5px;
+    left: 4px;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: -0.48px;
+    position: absolute;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .overlap-simper-front-6 {
+    position: absolute;
+    width: 24px;
+    height: 23px;
+    top: 3px;
+    left: 204px;
+    border: 1px solid;
+    border-color: #ffffff;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-10 {
+    height: 12px;
+    top: 4px;
+    left: 2px;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: -0.48px;
+    position: absolute;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .overlap-simper-front-7 {
+    position: absolute;
+    width: 24px;
+    height: 23px;
+    top: 3px;
+    left: 243px;
+    border: 1px solid;
+    border-color: #ffffff;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-11 {
+    height: 12px;
+    top: 4px;
+    left: 3px;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: -0.48px;
+    position: absolute;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .overlap-simper-front-8 {
+    position: absolute;
+    width: 251px;
+    height: 170px;
+    top: 274px;
+    left: 24px;
+  }
+
+  .box-simper-front .img-simper-front {
+    width: 113px;
+    height: 169px;
+    top: 1px;
+    left: 0;
+    position: absolute;
+    object-fit: cover;
+  }
+
+  .box-simper-front .rectangle-simper-front-3 {
+    position: absolute;
+    width: 251px;
+    height: 169px;
+    top: 0;
+    left: 0;
+    border: 1px solid;
+    border-color: #000000;
+  }
+
+  .box-simper-front .rectangle-simper-front-4 {
+    position: absolute;
+    width: 138px;
+    height: 84px;
+    top: 1px;
+    left: 113px;
+    background-color: #100c95;
+  }
+
+  .box-simper-front .rectangle-simper-front-5 {
+    position: absolute;
+    width: 29px;
+    height: 20px;
+    top: 19px;
+    left: 127px;
+    background-color: #ffe500;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-12 {
+    top: 24px;
+    left: 133px;
+    position: absolute;
+    width: 14px;
+    height: 11px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: -0.48px;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .rectangle-simper-front-6 {
+    position: absolute;
+    width: 29px;
+    height: 20px;
+    top: 19px;
+    left: 170px;
+    border: 1px solid;
+    border-color: #ffffff;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-13 {
+    position: absolute;
+    width: 24px;
+    height: 11px;
+    top: 23px;
+    left: 175px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: -0.4px;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .rectangle-simper-front-7 {
+    position: absolute;
+    width: 29px;
+    height: 20px;
+    top: 59px;
+    left: 117px;
+    background-color: #ffe500;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-14 {
+    top: 64px;
+    left: 123px;
+    position: absolute;
+    width: 14px;
+    height: 11px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: -0.48px;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .rectangle-simper-front-8 {
+    position: absolute;
+    width: 29px;
+    height: 20px;
+    top: 59px;
+    left: 151px;
+    border: 1px solid;
+    border-color: #ffffff;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-15 {
+    position: absolute;
+    width: 14px;
+    height: 11px;
+    top: 63px;
+    left: 159px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: -0.4px;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .rectangle-simper-front-9 {
+    position: absolute;
+    width: 29px;
+    height: 20px;
+    top: 59px;
+    left: 185px;
+    border: 1px solid;
+    border-color: #ffffff;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-16 {
+    position: absolute;
+    width: 12px;
+    height: 10px;
+    top: 61px;
+    left: 193px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: -0.48px;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .rectangle-simper-front-10 {
+    position: absolute;
+    width: 29px;
+    height: 20px;
+    top: 59px;
+    left: 219px;
+    border: 1px solid;
+    border-color: #ffffff;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-17 {
+    position: absolute;
+    width: 29px;
+    height: 11px;
+    top: 64px;
+    left: 220px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 19px;
+    letter-spacing: -0.38px;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .rectangle-simper-front-11 {
+    position: absolute;
+    width: 29px;
+    height: 20px;
+    top: 19px;
+    left: 213px;
+    border: 1px solid;
+    border-color: #ffffff;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-18 {
+    position: absolute;
+    width: 24px;
+    height: 11px;
+    top: 23px;
+    left: 216px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: -0.4px;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-19 {
+    position: absolute;
+    top: 6px;
+    left: 153px;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 8px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-20 {
+    position: absolute;
+    top: 45px;
+    left: 149px;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 8px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  .box-simper-front .text-wrapper-simper-front-21 {
+    position: absolute;
+    height: 12px;
+    top: 151px;
+    left: 151px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 10px;
+    letter-spacing: 0;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+</style>
+
+<div class="d-flex align-items-center justify-content-center">
+  <div class="box-simper-front">
+    <div class="group-simper-front">
+      <div class="overlap-group-simper-front">
+        <div class="overlap-simper-front">
+          <div class="div-simper-front">
+            <div class="rectangle-simper-front"></div>
+            <div class="rectangle-simper-front-2"></div>
+            <div class="text-wrapper-simper-front">SIMPER</div>
+            <div class="text-wrapper-simper-front-2">KARYAWAN</div>
+          </div>
+          <img
+            class="image-simper-front"
+            src="/assets/images/alamkaryalogo.png"
+          />
+          <div class="text-wrapper-simper-front-3">PT.ALAM KARYA GEMILANG</div>
+        </div>
+        <div class="data-user-simper">
+          <div>
+            Reg
+            <p class="reg-simper-front" id="reg-simper-front">: Samarinda</p>
+          </div>
+          <div>
+            Nama
+            <p class="name-simper-front" id="name-simper-front">: Heriska</p>
+          </div>
+          <div>
+            NIK
+            <p class="nik-simper-front" id="nik-simper-front">: 2023.01.231</p>
+          </div>
+          <div>
+            Perusahaan
+            <p
+              class="company-simper-front text-uppercase"
+              id="company-simper-front"
+            >
+              : PT Alam Karya
+            </p>
+          </div>
+          <div>
+            Departemen
+            <p
+              id="departement-simper-front"
+              class="departement-simper-front text-uppercase"
+            >
+              : SGT
+            </p>
+          </div>
+          <div>
+            Jabatan
+            <p id="position-simper-front" class="position-simper-front">
+              : Admin
+            </p>
+          </div>
+        </div>
+        <div class="div-wrapper-simper-front">
+          <div class="text-wrapper-simper-front-4">L1</div>
+        </div>
+        <div class="overlap-simper-front-2">
+          <div class="text-wrapper-simper-front-5">L2</div>
+        </div>
+        <div class="overlap-simper-front-3">
+          <div class="text-wrapper-simper-front-6">L3</div>
+        </div>
+        <div class="text-wrapper-simper-front-7">Pelanggaran</div>
+        <div class="overlap-simper-front-4">
+          <div class="text-wrapper-simper-front-8">JENIS SIMPER</div>
+          <div class="overlap-simper-front-5">
+            <div class="text-wrapper-simper-front-9">P</div>
+          </div>
+          <div class="overlap-simper-front-6">
+            <div class="text-wrapper-simper-front-10">Q</div>
+          </div>
+          <div class="overlap-simper-front-7">
+            <div class="text-wrapper-simper-front-11">R</div>
+          </div>
+        </div>
+        <div class="overlap-simper-front-8">
+          <img class="img-simper-front" src="img/image-3.png" />
+          <div class="rectangle-simper-front-3"></div>
+          <div class="rectangle-simper-front-4"></div>
+          <div class="rectangle-simper-front-5"></div>
+          <div class="text-wrapper-simper-front-12">A</div>
+          <div class="rectangle-simper-front-6"></div>
+          <div class="text-wrapper-simper-front-13">BI</div>
+          <div class="rectangle-simper-front-7"></div>
+          <div class="text-wrapper-simper-front-14">A</div>
+          <div class="rectangle-simper-front-8"></div>
+          <div class="text-wrapper-simper-front-15">B</div>
+          <div class="rectangle-simper-front-9"></div>
+          <div class="text-wrapper-simper-front-16">o</div>
+          <div class="rectangle-simper-front-10"></div>
+          <div class="text-wrapper-simper-front-17">AB</div>
+          <div class="rectangle-simper-front-11"></div>
+          <div class="text-wrapper-simper-front-18">BII</div>
+          <div class="text-wrapper-simper-front-19">JENIS SIM-POL</div>
+          <div class="text-wrapper-simper-front-20">GOLONGAN DARAH</div>
+          <div class="text-wrapper-simper-front-21">Tanda Tangan</div>
+        </div>
       </div>
     </div>
   </div>

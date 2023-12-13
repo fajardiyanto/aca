@@ -1189,6 +1189,599 @@ nav {
   height: 40px;
 }
 
+.box-simper-front {
+  width: 299px;
+  height: 505px;
+  outline-style: solid;
+  border-radius: 17px 17px 17px 17px;
+}
+
+.box-simper-front .group-simper-front {
+  width: 343px;
+  height: 505px;
+  top: 0;
+  left: 0;
+}
+
+.box-simper-front .overlap-group-simper-front {
+  position: relative;
+  width: 299px;
+  height: 505px;
+  background-color: #ffffff;
+  border-radius: 17px;
+}
+
+.box-simper-front .overlap-simper-front {
+  position: absolute;
+  width: 299px;
+  height: 145px;
+  top: 0;
+  left: 0;
+  background-color: #ff0000;
+  border-radius: 17px 17px 0px 0px;
+}
+
+.box-simper-front .div-simper-front {
+  position: absolute;
+  width: 140px;
+  height: 145px;
+  top: 0;
+  left: 159px;
+}
+
+.box-simper-front .rectangle-simper-front {
+  position: absolute;
+  width: 140px;
+  height: 85px;
+  top: 60px;
+  left: 0;
+  background-color: #000000;
+}
+
+.box-simper-front .rectangle-simper-front-2 {
+  position: absolute;
+  width: 140px;
+  height: 94px;
+  top: 0;
+  left: 0;
+  background-color: #100c95;
+  border-radius: 0px 17px 0px 0px;
+}
+
+.box-simper-front .text-wrapper-simper-front {
+  position: absolute;
+  width: 90px;
+  top: 37px;
+  left: 25px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 2.2px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.box-simper-front .text-wrapper-simper-front-2 {
+  position: absolute;
+  top: 109px;
+  left: 11px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.box-simper-front .image-simper-front {
+  width: 121px;
+  height: 80px;
+  top: 14px;
+  left: 21px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.box-simper-front .text-wrapper-simper-front-3 {
+  position: absolute;
+  width: 141px;
+  top: 114px;
+  left: 11px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.box-simper-front .data-user-simper {
+  position: absolute;
+  width: 213px;
+  height: 84px;
+  top: 147px;
+  left: 15px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+}
+
+.data-user-simper .reg-simper-front {
+  display: inline;
+  padding: 0;
+  margin-left: 50px;
+}
+
+.data-user-simper .name-simper-front {
+  display: inline;
+  padding: 0;
+  margin-left: 42px;
+}
+
+.data-user-simper .nik-simper-front {
+  display: inline;
+  padding: 0;
+  margin-left: 52px;
+}
+
+.data-user-simper .company-simper-front {
+  display: inline;
+  padding: 0;
+  margin-left: 15px;
+}
+
+.data-user-simper .departement-simper-front {
+  display: inline;
+  padding: 0;
+  margin-left: 14px;
+}
+
+.data-user-simper .position-simper-front {
+  display: inline;
+  padding: 0;
+  margin-left: 33px;
+}
+
+.box-simper-front .div-wrapper-simper-front {
+  position: absolute;
+  width: 25px;
+  height: 23px;
+  top: 461px;
+  left: 24px;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.box-simper-front .text-wrapper-simper-front-4 {
+  width: 17px;
+  height: 14px;
+  top: 4px;
+  left: 7px;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  position: absolute;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-simper-front .overlap-simper-front-2 {
+  position: absolute;
+  width: 25px;
+  height: 23px;
+  top: 461px;
+  left: 49px;
+  background-color: #ffffff;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: #000000;
+}
+
+.box-simper-front .text-wrapper-simper-front-5 {
+  width: 19px;
+  height: 14px;
+  top: 4px;
+  left: 4px;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  position: absolute;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-simper-front .overlap-simper-front-3 {
+  position: absolute;
+  width: 25px;
+  height: 23px;
+  top: 461px;
+  left: 74px;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.box-simper-front .text-wrapper-simper-front-6 {
+  width: 20px;
+  height: 14px;
+  top: 4px;
+  left: 4px;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  position: absolute;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-simper-front .text-wrapper-simper-front-7 {
+  position: absolute;
+  height: 12px;
+  top: 446px;
+  left: 24px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: -0.2px;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-simper-front .overlap-simper-front-4 {
+  position: absolute;
+  width: 299px;
+  height: 29px;
+  top: 238px;
+  left: 0;
+  background-color: #100c95;
+}
+
+.box-simper-front .text-wrapper-simper-front-8 {
+  position: absolute;
+  height: 12px;
+  top: 9px;
+  left: 32px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: -0.32px;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-simper-front .overlap-simper-front-5 {
+  position: absolute;
+  width: 24px;
+  height: 23px;
+  top: 3px;
+  left: 163px;
+  background-color: #ffe500;
+}
+
+.box-simper-front .text-wrapper-simper-front-9 {
+  height: 12px;
+  top: 5px;
+  left: 4px;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: -0.48px;
+  position: absolute;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-simper-front .overlap-simper-front-6 {
+  position: absolute;
+  width: 24px;
+  height: 23px;
+  top: 3px;
+  left: 204px;
+  border: 1px solid;
+  border-color: #ffffff;
+}
+
+.box-simper-front .text-wrapper-simper-front-10 {
+  height: 12px;
+  top: 4px;
+  left: 2px;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: -0.48px;
+  position: absolute;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-simper-front .overlap-simper-front-7 {
+  position: absolute;
+  width: 24px;
+  height: 23px;
+  top: 3px;
+  left: 243px;
+  border: 1px solid;
+  border-color: #ffffff;
+}
+
+.box-simper-front .text-wrapper-simper-front-11 {
+  height: 12px;
+  top: 4px;
+  left: 3px;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: -0.48px;
+  position: absolute;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-simper-front .overlap-simper-front-8 {
+  position: absolute;
+  width: 251px;
+  height: 170px;
+  top: 274px;
+  left: 24px;
+}
+
+.box-simper-front .img-simper-front {
+  width: 113px;
+  height: 169px;
+  top: 1px;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+}
+
+.box-simper-front .rectangle-simper-front-3 {
+  position: absolute;
+  width: 251px;
+  height: 169px;
+  top: 0;
+  left: 0;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.box-simper-front .rectangle-simper-front-4 {
+  position: absolute;
+  width: 138px;
+  height: 84px;
+  top: 1px;
+  left: 113px;
+  background-color: #100c95;
+}
+
+.box-simper-front .rectangle-simper-front-5 {
+  position: absolute;
+  width: 29px;
+  height: 20px;
+  top: 19px;
+  left: 127px;
+  background-color: #ffe500;
+}
+
+.box-simper-front .text-wrapper-simper-front-12 {
+  top: 24px;
+  left: 133px;
+  position: absolute;
+  width: 14px;
+  height: 11px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: -0.48px;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-simper-front .rectangle-simper-front-6 {
+  position: absolute;
+  width: 29px;
+  height: 20px;
+  top: 19px;
+  left: 170px;
+  border: 1px solid;
+  border-color: #ffffff;
+}
+
+.box-simper-front .text-wrapper-simper-front-13 {
+  position: absolute;
+  width: 24px;
+  height: 11px;
+  top: 23px;
+  left: 175px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-simper-front .rectangle-simper-front-7 {
+  position: absolute;
+  width: 29px;
+  height: 20px;
+  top: 59px;
+  left: 117px;
+  background-color: #ffe500;
+}
+
+.box-simper-front .text-wrapper-simper-front-14 {
+  top: 64px;
+  left: 123px;
+  position: absolute;
+  width: 14px;
+  height: 11px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: -0.48px;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-simper-front .rectangle-simper-front-8 {
+  position: absolute;
+  width: 29px;
+  height: 20px;
+  top: 59px;
+  left: 151px;
+  border: 1px solid;
+  border-color: #ffffff;
+}
+
+.box-simper-front .text-wrapper-simper-front-15 {
+  position: absolute;
+  width: 14px;
+  height: 11px;
+  top: 63px;
+  left: 159px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-simper-front .rectangle-simper-front-9 {
+  position: absolute;
+  width: 29px;
+  height: 20px;
+  top: 59px;
+  left: 185px;
+  border: 1px solid;
+  border-color: #ffffff;
+}
+
+.box-simper-front .text-wrapper-simper-front-16 {
+  position: absolute;
+  width: 12px;
+  height: 10px;
+  top: 61px;
+  left: 193px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: -0.48px;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-simper-front .rectangle-simper-front-10 {
+  position: absolute;
+  width: 29px;
+  height: 20px;
+  top: 59px;
+  left: 219px;
+  border: 1px solid;
+  border-color: #ffffff;
+}
+
+.box-simper-front .text-wrapper-simper-front-17 {
+  position: absolute;
+  width: 29px;
+  height: 11px;
+  top: 64px;
+  left: 220px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 19px;
+  letter-spacing: -0.38px;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-simper-front .rectangle-simper-front-11 {
+  position: absolute;
+  width: 29px;
+  height: 20px;
+  top: 19px;
+  left: 213px;
+  border: 1px solid;
+  border-color: #ffffff;
+}
+
+.box-simper-front .text-wrapper-simper-front-18 {
+  position: absolute;
+  width: 24px;
+  height: 11px;
+  top: 23px;
+  left: 216px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.box-simper-front .text-wrapper-simper-front-19 {
+  position: absolute;
+  top: 6px;
+  left: 153px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 8px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.box-simper-front .text-wrapper-simper-front-20 {
+  position: absolute;
+  top: 45px;
+  left: 149px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 8px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.box-simper-front .text-wrapper-simper-front-21 {
+  position: absolute;
+  height: 12px;
+  top: 151px;
+  left: 151px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
 @media screen and (max-width: 599px) {
   nav {
       height: 56px;
