@@ -398,7 +398,7 @@ nav {
 }
 
 .sidebar-expanded {
-  width: 230px;
+  width: 300px;
 }
 .sidebar-collapsed {
   width: 60px;
@@ -1063,7 +1063,7 @@ nav {
 
 .box-simper .text-wrapper-simper-13 {
   position: absolute;
-  top: 79px;
+  top: 82px;
   left: 22px;
   font-family: "Inter-ExtraBold", Helvetica;
   font-weight: 800;
@@ -1101,7 +1101,7 @@ nav {
 }
 
 .box-simper .text-wrapper-simper-16 {
-  top: 79px;
+  top: 82px;
   left: 99px;
   position: absolute;
   font-family: "Inter-ExtraBold", Helvetica;

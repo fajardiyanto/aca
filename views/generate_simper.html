@@ -406,7 +406,9 @@
           const elementSimper = document.getElementById("simper-card");
           elementSimper.classList.add("d-none");
         }
-
+        document.getElementById(
+          "valid_permit"
+        ).innerHTML = `: ${dataPermit.valid}`;
         document.getElementById(
           "reg-simper-front"
         ).innerHTML = `: ${dataPermit.region}`;

@@ -45,17 +45,22 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/home">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Temporary_file_letter_A.svg/1200px-Temporary_file_letter_A.svg.png"
+          src="/assets/images/alamkaryalogo.png"
           width="30"
           height="30"
           class="d-inline-block align-top"
           alt=""
         />
-        <span class="menu-collapsed">CA</span>
+        <span class="menu-collapsed">PT ALAM KARYA GEMILANG</span>
       </a>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <div class="d-flex w-100 justify-content-start align-items-center">
+            <h5 class="text-white">APLIKASI PEMBUATAN MINE PERMIT DAN SIMPER</h5>
+          </div>
+        </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
             <div class="d-flex mr-lg-5">
@@ -143,10 +148,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css
         </ul>
       </div>
       <div class="col p-4" id="col-content">
-        <div class="card" id="card-content">
-            <div class="card-body" id="card-body-content">
-                {{ template "content" . }}
-            </div>
+        <div id="card-body-content">
+            {{ template "content" . }}
         </div>
     </div>
 
