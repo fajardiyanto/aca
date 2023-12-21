@@ -69,6 +69,7 @@ func main() {
 	r.GET("/detail/permit/by-name", svcPermit.GetDetailPermitByName)
 
 	r.GET("/generate/permit", svcPermit.PagePermit)
+	r.GET("/generate/simper", svcPermit.PageSimper)
 
 	// position
 	r.GET("/list/position", svcPosition.ListPositionHTML)

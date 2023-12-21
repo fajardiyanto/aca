@@ -50,6 +50,12 @@ func (s *PermitService) PagePermit(c *gin.Context) {
 	})
 }
 
+func (s *PermitService) PageSimper(c *gin.Context) {
+	c.HTML(http.StatusOK, "generate_simper", gin.H{
+		"title": "Simper",
+	})
+}
+
 func (s *PermitService) UpdatePermitHTML(c *gin.Context) {
 	c.HTML(http.StatusOK, "update_permit", gin.H{
 		"title": "Update Permit",
@@ -97,8 +103,8 @@ func (s *PermitService) CreatePermit(c *gin.Context) {
 		for i := 0; i < len(types) && i < len(names); i++ {
 			dataVehicles = append(dataVehicles, models.Vehicle{
 				Number: strconv.Itoa(i + 1),
-				Type: types[i],
-				Name: names[i],
+				Type:   types[i],
+				Name:   names[i],
 			})
 		}
 
@@ -109,13 +115,13 @@ func (s *PermitService) CreatePermit(c *gin.Context) {
 		}
 
 		dataSimper := models.Simper{
-			PermitID: permitID,
-			Valid: c.PostForm("simper_valid"),
-			Type: c.PostForm("simper_type"),
-			Simpol: c.PostForm("simpol"),
-			NoSimpol: c.PostForm("no_simpol"),
+			PermitID:  permitID,
+			Valid:     c.PostForm("simper_valid"),
+			Type:      c.PostForm("simper_type"),
+			Simpol:    c.PostForm("simpol"),
+			NoSimpol:  c.PostForm("no_simpol"),
 			BloodType: c.PostForm("blood_type"),
-			Vehicle: string(vehicle),
+			Vehicle:   string(vehicle),
 		}
 
 		if err = s.db.Save(&dataSimper).Error; err != nil {
@@ -203,16 +209,16 @@ func (s *PermitService) GetDetailPermit(c *gin.Context) {
 
 		var vehicle []models.Vehicle
 		json.Unmarshal([]byte(dataSimper.Vehicle), &vehicle)
-		
+
 		responseSimper = models.SimperResponse{
-			ID: dataSimper.ID,
-			Valid: dataSimper.Valid,
-			PermitID: dataSimper.PermitID,
-			Type: dataSimper.Type,
-			Simpol: dataSimper.Simpol,
-			NoSimpol: dataSimper.NoSimpol,
+			ID:        dataSimper.ID,
+			Valid:     dataSimper.Valid,
+			PermitID:  dataSimper.PermitID,
+			Type:      dataSimper.Type,
+			Simpol:    dataSimper.Simpol,
+			NoSimpol:  dataSimper.NoSimpol,
 			BloodType: dataSimper.BloodType,
-			Vehicle: vehicle,
+			Vehicle:   vehicle,
 		}
 	}
 
@@ -266,8 +272,8 @@ func (s *PermitService) UpdatePermit(c *gin.Context) {
 		for i := 0; i < len(types) && i < len(names); i++ {
 			dataVehicles = append(dataVehicles, models.Vehicle{
 				Number: strconv.Itoa(i + 1),
-				Type: types[i],
-				Name: names[i],
+				Type:   types[i],
+				Name:   names[i],
 			})
 		}
 
@@ -276,14 +282,14 @@ func (s *PermitService) UpdatePermit(c *gin.Context) {
 			fmt.Println("Error:", err)
 			return
 		}
-		
+
 		dataSimper := models.Simper{
-			Valid: c.PostForm("simper_valid"),
-			Type: c.PostForm("simper_type"),
-			Simpol: c.PostForm("simpol"),
-			NoSimpol: c.PostForm("no_simpol"),
+			Valid:     c.PostForm("simper_valid"),
+			Type:      c.PostForm("simper_type"),
+			Simpol:    c.PostForm("simpol"),
+			NoSimpol:  c.PostForm("no_simpol"),
 			BloodType: c.PostForm("blood_type"),
-			Vehicle: string(vehicle),
+			Vehicle:   string(vehicle),
 		}
 
 		if data.IsSimper {

@@ -25,7 +25,10 @@
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
   crossorigin="anonymous"
 ></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script
+  type="text/javascript"
+  src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"
+></script>
 <script>
   $.ajax({
     url: "/get/permit?name=" + $.cookie("user-name"),
@@ -33,7 +36,14 @@
     success: function (data) {
       let htmlTable = "";
       let idx = 1;
+      let isSimper = "";
       for (let i of data) {
+        if (i["is_simper"] === true) {
+          isSimper = `<a class="dropdown-item" href="/generate/permit?id=${i["id"]}">Permit</a>
+          <a class="dropdown-item" href="/generate/simper?id=${i["id"]}">Simper</a>`;
+        } else {
+          isSimper = `<a class="dropdown-item" href="/generate/permit?id=${i["id"]}">Permit</a>`;
+        }
         htmlTable += `<tr>
                         <td scope="row" align="center">${idx}</td>
                         <td width="40%">${i["name"]}</td>
@@ -41,7 +51,10 @@
                         <td>
                             <a href="/update/permit?id=${i["id"]}" class="btn btn-warning text-white">Update</a>
                             <a class="btn btn-danger text-white delete-btn" pub_id=${i["id"]}>Delete</a>
-                            <a type='button' onclick="printDiv('page-permit', ${i["id"]})" class="btn btn-success text-white">Cetak</a>
+                            <button type='button' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-success text-white">Preview</button>
+                            <div class="dropdown-menu">
+                              ${isSimper}
+                            </div>
                         </td>
                     </tr>`;
         idx += 1;
@@ -88,13 +101,5 @@
       confirmDeletePermit(_id);
     });
   });
-
-  function printDiv(divName, id) {
-    var printFrame = document.getElementById("printFrame");
-    printFrame.src = "/generate/permit?id=" + id;
-    printFrame.onload = function () {
-      printFrame.contentWindow.print();
-    };
-  }
 </script>
 {{ end }}

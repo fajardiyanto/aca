@@ -2,10 +2,11 @@
 @import url("https://use.fontawesome.com/releases/v5.6.1/css/all.css");
 
 .box {
-  width: 299px;
-  height: 521px;
+  width: 301px;
+  height: 523px;
   outline-style: solid;
   border-radius: 17px 17px 17px 17px;
+  border: 1px solid black;
 }
 
 .box .group {
@@ -437,10 +438,11 @@ nav {
 }
 
 .box-side {
-  width: 299px;
-  height: 521px;
+  width: 301px;
+  height: 523px;
   outline-style: solid;
   border-radius: 17px 17px 17px 17px;
+  border: 1px solid black;
 }
 
 .box-side .group-side {
@@ -687,10 +689,11 @@ nav {
 }
 
 .box-simper {
-  width: 299px;
-  height: 519px;
+  width: 301px;
+  height: 523px;
   outline-style: solid;
   border-radius: 17px 17px 17px 17px;
+  border: 1px solid black;
 }
 
 .box-simper .group-simper {
@@ -1190,10 +1193,11 @@ nav {
 }
 
 .box-simper-front {
-  width: 299px;
-  height: 505px;
+  width: 301px;
+  height: 523px;
   outline-style: solid;
   border-radius: 17px 17px 17px 17px;
+  border: 1px solid black;
 }
 
 .box-simper-front .group-simper-front {
@@ -1470,14 +1474,15 @@ nav {
   height: 23px;
   top: 3px;
   left: 163px;
-  background-color: #ffe500;
+  border: 1px solid;
+  border-color: #ffffff;
 }
 
 .box-simper-front .text-wrapper-simper-front-9 {
   height: 12px;
   top: 5px;
   left: 4px;
-  color: #000000;
+  color: #ffffff;
   font-size: 24px;
   letter-spacing: -0.48px;
   position: absolute;
@@ -1577,7 +1582,8 @@ nav {
   height: 20px;
   top: 19px;
   left: 127px;
-  background-color: #ffe500;
+  border: 1px solid;
+  border-color: #ffffff;
 }
 
 .box-simper-front .text-wrapper-simper-front-12 {
@@ -1588,7 +1594,7 @@ nav {
   height: 11px;
   font-family: "Inter-Bold", Helvetica;
   font-weight: 700;
-  color: #000000;
+  color: #ffffff;
   font-size: 24px;
   letter-spacing: -0.48px;
   line-height: 12px;
@@ -1626,7 +1632,8 @@ nav {
   height: 20px;
   top: 59px;
   left: 117px;
-  background-color: #ffe500;
+  border: 1px solid;
+  border-color: #ffffff;
 }
 
 .box-simper-front .text-wrapper-simper-front-14 {
@@ -1637,7 +1644,7 @@ nav {
   height: 11px;
   font-family: "Inter-Bold", Helvetica;
   font-weight: 700;
-  color: #000000;
+  color: #ffffff;
   font-size: 24px;
   letter-spacing: -0.48px;
   line-height: 12px;
@@ -1780,6 +1787,10 @@ nav {
   letter-spacing: 0;
   line-height: 12px;
   white-space: nowrap;
+}
+
+.box-simper-front .rectangle-simper-front-50 {
+  margin-top: -50px;
 }
 
 @media screen and (max-width: 599px) {
